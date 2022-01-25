@@ -4,6 +4,6 @@
 
 <style>
 	nav {
-		@apply border-gray-300 md:border-r <md:border-b;
+		@apply bg-gray-50 border-gray-300 md:border-r <md:border-b;
 	}
 </style>
