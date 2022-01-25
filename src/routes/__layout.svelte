@@ -22,8 +22,8 @@
 	}
 </style>
 
-<script>
+<script lang="ts">
 	import Sidebar from '$lib/Sidebar.svelte'
-	import Tabs from '$lib/Tabs.svelte'
+	import Tabs from '$lib/tabs/Tabs.svelte'
 	import '../app.css'
 </script>
