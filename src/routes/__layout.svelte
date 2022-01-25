@@ -1,5 +1,5 @@
 <div class="root">
-	<Toolbar/>
+	<Sidebar/>
 
 	<div>
 		<Tabs/>
@@ -23,7 +23,7 @@
 </style>
 
 <script>
-	import Toolbar from '$lib/Toolbar.svelte'
+	import Sidebar from '$lib/Sidebar.svelte'
 	import Tabs from '$lib/Tabs.svelte'
 	import '../app.css'
 </script>
