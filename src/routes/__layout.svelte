@@ -1,10 +1,12 @@
 <div class="root">
 	<Toolbar/>
-	<Explorer/>
 
-	<main>
-		<slot></slot>
-	</main>
+	<div>
+		<Tabs/>
+		<main>
+			<slot></slot>
+		</main>
+	</div>
 </div>
 
 <style>
@@ -14,20 +16,14 @@
 
 	@screen md {
 		.root {
-			grid-template-columns: 4rem 16rem 1fr;
+			grid-template-columns: 10rem 1fr;
 			height: 100vh;
-		}
-	}
-
-	@screen <md {
-		.root {
-			grid-template-rows: repeat(3, auto);
 		}
 	}
 </style>
 
 <script>
 	import Toolbar from '$lib/Toolbar.svelte'
-	import Explorer from '$lib/Explorer.svelte'
+	import Tabs from '$lib/Tabs.svelte'
 	import '../app.css'
 </script>
