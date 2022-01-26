@@ -1,31 +1,25 @@
-<li>
-	{#if route?.title}
-		<a href={route.path}>{route.title}</a>
-	{:else}
-		Blank
-	{/if}
-
-	<button on:click={close}>×</button>
-</li>
+<button class="close" on:click={close}>×</button>
 
 <style>
-	li {
-		display: inline-block;
+	button {
+		display: grid;
+		place-content: center;
+		width: 1em;
+		height: 1em;
+		padding: 1ch;
+		margin-right: 0.5ch;
 
-		@apply border border-b-0 border-gray-300;
+		@apply rounded hover:bg-gray-200;
 	}
 </style>
 
 <script lang="ts">
-	import routes from '$lib/routes'
 	import { tabs } from '$lib/store'
 	import { browser } from '$app/env'
-	import { page } from '$app/stores'
 	import { goto } from '$app/navigation'
 
-	export let path: Path | null = null
-
-	$: route = routes.find(route => route.path === path)
+	export let path
+	export let active: boolean
 
 	function close(): void {
 		let filtered = $tabs.filter(tab => tab !== path)
@@ -36,7 +30,7 @@
 		}
 
 		// update content to first tab or homepage if closed tab was active
-		if ($page.url.pathname === path) {
+		if (active) {
 			goto($tabs[0] || '/')
 		}
 	}
