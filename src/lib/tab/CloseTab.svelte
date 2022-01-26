@@ -1,4 +1,6 @@
-<button class="close" on:click={close}>×</button>
+<button class="close" on:click={close} title="Close">
+	×
+</button>
 
 <style>
 	button {
