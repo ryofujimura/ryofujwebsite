@@ -6,3 +6,8 @@ type Route = {
 }
 
 type Path = string
+
+type Work = {
+	id: string
+	title: string
+}
