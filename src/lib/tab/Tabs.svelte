@@ -1,5 +1,5 @@
 <ul class="no-scrollbar">
-	{#each $tabs as tab}
+	{#each $tabs as tab (tab)}
 		<Tab path={tab} />
 	{:else}
 		<Tab path="/" />
