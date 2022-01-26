@@ -14,8 +14,9 @@
 </style>
 
 <script lang="ts">
-	import { tabs } from '$lib/store'
-	import { browser } from '$app/env'
+	import { tabs, localStore } from '$lib/store'
+	import { paths } from '$lib/routes'
+	import { page } from '$app/stores'
 	import { goto } from '$app/navigation'
 
 	export let path
@@ -25,12 +26,12 @@
 		let filtered = $tabs.filter(tab => tab !== path)
 		$tabs = filtered
 
-		if (browser) {
-			window.localStorage.setItem('tabs', JSON.stringify($tabs))
-		}
+		localStore('tabs', $tabs)
 
 		// update content to first tab or homepage if closed tab was active
-		if (active) {
+		let currentPageDoesntExist = !paths.includes($page.url.pathname)
+
+		if (active || currentPageDoesntExist) {
 			goto($tabs[0] || '/')
 		}
 	}

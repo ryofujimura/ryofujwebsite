@@ -1,8 +1,3 @@
-type Route = {
-	title: string
-	path: string
-}
-
 const routes: Route[] = [
 	{ title: 'Home', path: '/' },
 	{ title: 'Skills', path: '/skills' },
@@ -10,5 +5,7 @@ const routes: Route[] = [
 	{ title: 'About', path: '/about' },
 	{ title: 'Contact', path: '/contact' },
 ]
+
+export const paths: Path[] = routes.map(({ path }) => path)
 
 export default routes

@@ -6,3 +6,9 @@ export let tabs = writable<Path[]>(
 		? (JSON.parse(localStorage.getItem('tabs')) || [])
 		: []
 )
+
+export function localStore(key, value): void {
+	if (browser) {
+		window.localStorage.setItem(key, JSON.stringify(value))
+	}
+}
