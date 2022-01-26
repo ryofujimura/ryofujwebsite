@@ -4,8 +4,8 @@ const works: Work[] = [
 		title: 'ryofuj.com',
 	},
 	{
-		id: 'poop',
-		title: '💩',
+		id: 'resume',
+		title: 'Resume',
 	}
 ]
 

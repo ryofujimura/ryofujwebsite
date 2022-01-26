@@ -22,7 +22,7 @@
 	}
 
 	main {
-		padding: 1rem;
+		padding: 2rem;
 	}
 </style>
 
