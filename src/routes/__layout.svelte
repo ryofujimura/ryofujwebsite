@@ -20,6 +20,10 @@
 			height: 100vh;
 		}
 	}
+
+	main {
+		padding: 1rem;
+	}
 </style>
 
 <script lang="ts">

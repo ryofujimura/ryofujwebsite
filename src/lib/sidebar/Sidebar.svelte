@@ -1,20 +1,31 @@
 <nav>
-	{#each routes as route}
-		{#if route.path === '/'}
-			<Route {route}>poop</Route>
-		{:else}
+	<Logo route={home} />
+
+	<ul>
+		{#each rest as route}
 			<Route {route} />
-		{/if}
-	{/each}
+		{/each}
+	</ul>
 </nav>
 
 <style>
 	nav {
+		display: flex;
+		flex-direction: column;
+		padding: 1rem;
+
 		@apply bg-gray-50 border-gray-300 md:border-r <md:border-b;
+	}
+
+	ul {
+		margin-block: auto;
 	}
 </style>
 
 <script lang="ts">
 	import routes from '../routes'
+	import Logo from './Logo.svelte'
 	import Route from './Route.svelte'
+
+	let [home, ...rest] = routes
 </script>
