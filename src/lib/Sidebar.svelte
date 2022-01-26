@@ -1,6 +1,6 @@
 <nav>
 	{#each routes as route}
-		<a href={route.path} rel="external" on:click={() => onClick(route.path)}>
+		<a href={route.path} on:click={() => onClick(route.path)}>
 			{route.title}
 		</a>
 	{/each}

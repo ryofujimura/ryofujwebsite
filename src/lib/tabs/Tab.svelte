@@ -20,6 +20,8 @@
 	import routes from '$lib/routes'
 	import { tabs } from '$lib/store'
 	import { browser } from '$app/env'
+	import { page } from '$app/stores'
+	import { goto } from '$app/navigation'
 
 	export let path: Path | null = null
 
@@ -33,6 +35,9 @@
 			window.localStorage.setItem('tabs', JSON.stringify($tabs))
 		}
 
-		// TODO: navigate to first tab if closed tab was active
+		// update content to first tab or homepage if closed tab was active
+		if ($page.url.pathname === path) {
+			goto($tabs[0] || '/')
+		}
 	}
 </script>

@@ -15,4 +15,11 @@
 <script lang="ts">
 	import { tabs } from '$lib/store'
 	import Tab from './Tab.svelte'
+	import { afterNavigate } from '$app/navigation'
+
+	$: $tabs
+
+	afterNavigate(() => {
+		tabs.set($tabs)
+	})
 </script>
