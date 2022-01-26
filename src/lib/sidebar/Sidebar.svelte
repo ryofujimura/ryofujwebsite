@@ -3,7 +3,9 @@
 
 	<ul>
 		{#each rest as route}
-			<Route {route} />
+			<li>
+				<Route {route} />
+			</li>
 		{/each}
 	</ul>
 </nav>
