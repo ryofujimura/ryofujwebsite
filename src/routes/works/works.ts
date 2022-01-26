@@ -6,7 +6,7 @@ const works: Work[] = [
 	{
 		id: 'resume',
 		title: 'Resume',
-	}
+	},
 ]
 
 export default works
