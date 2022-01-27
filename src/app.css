@@ -3,6 +3,10 @@
 @tailwind utilities;
 
 @layer base {
+	summary {
+		cursor: pointer;
+	}
+
 	svg {
 		width: 1em;
 		height: 1em;

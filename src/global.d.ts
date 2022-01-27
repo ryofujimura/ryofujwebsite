@@ -12,11 +12,19 @@ type Route = {
 
 type Path = string
 
+type Skill = {
+	name: string
+	featured: boolean
+}
+
+interface SkillWithWorks extends Skill {
+	works: Work[]
+}
+
 type Work = {
 	id: string
 	title: string
-}
-
-type Skill = {
-	name: string
+	skills: Skill['name'][]
+	link?: string
+	github?: string
 }

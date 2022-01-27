@@ -8,7 +8,7 @@
 
 <script lang="ts">
 	import SEO from '$lib/SEO.svelte'
-	import skills from './skills'
+	import { skills } from '../../lib/skills'
 	import Skill from '$lib/skill/Skill.svelte'
 
 	let title = 'Skills'
