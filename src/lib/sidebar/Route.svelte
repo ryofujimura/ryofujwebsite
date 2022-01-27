@@ -15,7 +15,7 @@
 
 	export let route: Route
 
-	function onClick(path: Path): void {
+	function onClick(path: Path) {
 		if (!$tabs.includes(path)) {
 			$tabs.push(path)
 

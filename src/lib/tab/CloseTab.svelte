@@ -24,7 +24,7 @@
 	export let path
 	export let active: boolean
 
-	function close(): void {
+	function close() {
 		let filtered = $tabs.filter(tab => tab !== path)
 		$tabs = filtered
 
