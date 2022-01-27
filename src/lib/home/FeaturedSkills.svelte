@@ -1,9 +1,15 @@
 <div class:md:hidden={!offsetWidth}>
-	<div class="offset" style:--offset="{offsetWidth}px">💻 Software Developer</div>
+	<div class="offset" style:--offset="{offsetWidth}px">
+		💻 Software Developer
+	</div>
 
 	{#each featuredSkills as skill}
-		<details open={$activeFeaturedSkill === skill.name} on:click|preventDefault={() => onClick(skill.name)}>
-			<summary class="offset" style:--offset="{offsetWidth}px">
+		<details open={$activeFeaturedSkill === skill.name}>
+			<summary
+				class="offset"
+				style:--offset="{offsetWidth}px"
+				on:click|preventDefault={() => onClick(skill.name)}
+			>
 				{skill.name}
 			</summary>
 
