@@ -16,7 +16,7 @@
 </style>
 
 <script lang="ts">
-	import { tabs, localStore } from '$lib/store'
+	import { tabs, localStore, activeFeaturedSkill } from '$lib/store'
 	import { paths } from '$lib/routes'
 	import { page } from '$app/stores'
 	import { goto } from '$app/navigation'
@@ -25,9 +25,7 @@
 	export let active: boolean
 
 	function close() {
-		let filtered = $tabs.filter(tab => tab !== path)
-		$tabs = filtered
-
+		$tabs = $tabs.filter(tab => tab !== path)
 		localStore('tabs', $tabs)
 
 		// update content to first tab or homepage if closed tab was active
@@ -35,6 +33,9 @@
 
 		if (active || currentPageDoesntExist) {
 			goto($tabs[0] || '/')
+
+			$activeFeaturedSkill = null
+			localStore('activeFeaturedSkill', $activeFeaturedSkill)
 		}
 	}
 </script>

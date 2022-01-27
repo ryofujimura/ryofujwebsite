@@ -7,8 +7,18 @@ export let tabs = writable<Path[]>(
 		: []
 )
 
+export let activeFeaturedSkill = writable<string | null>(
+	browser
+		? localStorage.getItem('activeFeaturedSkill')
+		: null
+)
+
 export function localStore(key: string, value: any): void {
+	let newValue = typeof value === 'string'
+		? value
+		: JSON.stringify(value)
+
 	if (browser) {
-		window.localStorage.setItem(key, JSON.stringify(value))
+		window.localStorage.setItem(key, newValue)
 	}
 }

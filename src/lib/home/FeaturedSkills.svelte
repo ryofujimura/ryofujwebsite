@@ -2,18 +2,16 @@
 	<div class="offset" style:--offset="{offsetWidth}px">💻 Software Developer</div>
 
 	{#each featuredSkills as skill}
-		<details open on:click|preventDefault={() => onClick(skill.name)}>
+		<details open={$activeFeaturedSkill === skill.name} on:click|preventDefault={() => onClick(skill.name)}>
 			<summary class="offset" style:--offset="{offsetWidth}px">
 				{skill.name}
 			</summary>
 
-			{#if active === skill.name}
-				<ul class="bg-gray-50" transition:slide>
-					{#each skill.works as work}
-						<li>{work.title}</li>
-					{/each}
-				</ul>
-			{/if}
+			<ul class="bg-gray-50">
+				{#each skill.works as work}
+					<li>{work.title}</li>
+				{/each}
+			</ul>
 		</details>
 	{/each}
 </div>
@@ -36,20 +34,20 @@
 
 <script lang="ts">
 	import { skillsWithWorks } from '$lib/skills'
-	import { slide } from 'svelte/transition'
+	import { activeFeaturedSkill, localStore } from '$lib/store'
 
 	export let offsetWidth: number
 
 	let featuredSkills = skillsWithWorks
 		.filter(({ featured, works }) => featured && works.length > 0)
 
-	let active: string | false = false
-
 	function onClick(name: string) {
-		if (active === name) {
-			active = false
+		if ($activeFeaturedSkill === name) {
+			$activeFeaturedSkill = null
 		} else {
-			active = name
+			$activeFeaturedSkill = name
 		}
+
+		localStore('activeFeaturedSkill', $activeFeaturedSkill)
 	}
 </script>
