@@ -1,4 +1,7 @@
-<li class:active>
+<li
+	class="border-t border-x border-gray-300 text-gray-500"
+	class:active
+>
 	<Title {path} />
 	<CloseTab {path} {active} />
 </li>
@@ -7,8 +10,6 @@
 	li {
 		display: inline-flex;
 		align-items: center;
-
-		@apply border-t border-x border-gray-300 text-gray-500;
 	}
 
 	li:not(:first-child) {

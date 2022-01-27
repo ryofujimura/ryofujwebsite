@@ -1,4 +1,4 @@
-<ul class="no-scrollbar">
+<ul class="bg-gray-50 border-b border-gray-300 no-scrollbar">
 	{#each $tabs as tab (tab)}
 		<Tab path={tab} />
 	{:else}
@@ -13,8 +13,6 @@
 		overflow-x: auto;
 		overflow-y: hidden;
 		max-width: 100vw;
-
-		@apply bg-gray-50 border-b border-gray-300;
 	}
 
 	ul::after {

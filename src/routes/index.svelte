@@ -1,64 +1,29 @@
-<SEO />
+<SEO {title} />
 
 <section>
-	<Heading bind:offsetWidth>
-		Ryo Fujimura — 💻 Software Developer
-	</Heading>
-
-	<div class="list">
-		{#each featuredSkills as skill}
-			<details>
-				<summary style:--offset="{offsetWidth}px">
-					{skill.name}
-				</summary>
-
-				<ul>
-					{#each skill.works as work}
-						<li>{work.title}</li>
-					{/each}
-				</ul>
-			</details>
-		{/each}
-	</div>
+	<Heading bind:offsetWidth>{title}</Heading>
+	<FeaturedSkills {offsetWidth} />
 </section>
 
 <style>
 	section {
 		position: relative;
-		display: grid;
-		gap: 1rem;
 	}
 
-	.list {
-		flex: 1 1;
-	}
-
-	@screen md {
-		summary {
-			margin-left: calc(var(--offset) + 1rem);
+	@screen <md {
+		section {
+			display: grid;
+			gap: 1rem;
 		}
-	}
-
-	ul {
-		@apply bg-gray-50;
-	}
-
-	summary {
-		display: inline-block;
-	}
-
-	summary::-webkit-details-marker {
-		display: none;
 	}
 </style>
 
 <script lang="ts">
 	import SEO from '$lib/SEO.svelte'
 	import Heading from '$lib/home/Heading.svelte'
-	import { skillsWithWorks } from '$lib/skills'
+	import FeaturedSkills from '$lib/home/FeaturedSkills.svelte'
 
 	let offsetWidth: number
 
-	let featuredSkills = skillsWithWorks
-		.filter(({ featured, works }) => featured && works.length > 0)
+	let title = 'Ryo Fujimura'
 </script>

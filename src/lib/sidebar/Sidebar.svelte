@@ -1,4 +1,4 @@
-<nav>
+<nav class="bg-gray-50 border-gray-300 md:border-r <md:border-b">
 	<Logo route={home} />
 
 	<ul>
@@ -15,8 +15,6 @@
 		display: flex;
 		flex-direction: column;
 		padding: 1rem;
-
-		@apply bg-gray-50 border-gray-300 md:border-r <md:border-b;
 	}
 
 	ul {
