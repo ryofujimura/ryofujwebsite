@@ -2,7 +2,7 @@ const works: Work[] = [
 	{
 		id: 'ryofuj',
 		title: 'ryofuj.com',
-		skills: ['HTML/CSS', 'JavaScript', 'Git/GitHub'],
+		skills: ['HTML / CSS', 'JavaScript', 'Git / GitHub'],
 		link: 'https://ryofuj.netlify.app',
 		github: 'ryofuj/ryofuj',
 	},

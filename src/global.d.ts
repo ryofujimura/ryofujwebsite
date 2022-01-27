@@ -12,8 +12,16 @@ type Route = {
 
 type Path = string
 
+type SkillName =
+	'Python' |
+	'Swift / SwiftUI' |
+	'HTML / CSS' |
+	'JavaScript' |
+	'Git / GitHub' |
+	'Japanese'
+
 type Skill = {
-	name: string
+	name: SkillName
 	featured: boolean
 }
 
@@ -24,7 +32,7 @@ interface SkillWithWorks extends Skill {
 type Work = {
 	id: string
 	title: string
-	skills: Skill['name'][]
+	skills: SkillName[]
 	link?: string
 	github?: string
 }

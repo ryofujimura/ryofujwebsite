@@ -10,7 +10,7 @@ export const skills: Skill[] = [
 		featured: true,
 	},
 	{
-		name: 'HTML/CSS',
+		name: 'HTML / CSS',
 		featured: true,
 	},
 	{
