@@ -1,32 +1,32 @@
 <div class="root">
 	<Sidebar/>
-
-	<div class="content">
-		<Tabs/>
-		<main>
-			<slot></slot>
-		</main>
-	</div>
+	<Tabs/>
+	<main>
+		<slot></slot>
+	</main>
 </div>
 
 <style>
 	.root {
 		display: grid;
+		grid-template-areas: 'sidebar' 'tabs' 'main';
 	}
 
 	@screen md {
 		.root {
+			grid-template-areas:
+				'sidebar tabs'
+				'sidebar main';
 			grid-template-columns: 10rem 1fr;
+			grid-template-rows: auto 1fr;
 			height: 100vh;
 		}
 	}
 
-	.content {
-		overflow-y: auto;
-	}
-
 	main {
+		grid-area: main;
 		padding: 2rem;
+		overflow-x: auto;
 	}
 </style>
 

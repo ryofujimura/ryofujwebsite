@@ -8,6 +8,7 @@
 
 <style>
 	ul {
+		grid-area: tabs;
 		position: sticky;
 		top: 0;
 		left: 0;

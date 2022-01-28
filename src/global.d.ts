@@ -1,10 +1,5 @@
 /// <reference types="@sveltejs/kit" />
 
-type Site = {
-	title: string
-	description: string
-}
-
 type Route = {
 	title: string
 	subtitle?: string
