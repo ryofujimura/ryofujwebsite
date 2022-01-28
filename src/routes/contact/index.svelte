@@ -1,6 +1,9 @@
 <h1>Contact</h1>
 
-<form name="contact" method="post" data-netlify="true" bind:this={form} on:input={onInput}>
+<form
+	name="contact" method="post" action="/contact/success" data-netlify="true"
+	bind:this={form} on:input={onInput}
+>
 	<input name="form-name" value="contact" type="hidden">
 
 	<label>
@@ -50,4 +53,8 @@
 	function onInput() {
 		valid = form.checkValidity()
 	}
+</script>
+
+<script context="module" lang="ts">
+	export const prerender = true
 </script>

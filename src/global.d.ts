@@ -7,7 +7,9 @@ type Site = {
 
 type Route = {
 	title: string
+	subtitle?: string
 	path: Path
+	featured?: boolean
 }
 
 type Path = string

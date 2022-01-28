@@ -27,5 +27,5 @@
 	import Logo from './Logo.svelte'
 	import Route from './Route.svelte'
 
-	let [home, ...rest] = routes
+	let [home, ...rest] = routes.filter(({ featured }) => featured)
 </script>
