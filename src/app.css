@@ -13,6 +13,30 @@
 	}
 }
 
+@layer components {
+	.button {
+		padding: 0.5ch;
+
+		@apply border border-gray-300 text-black focus:border-amber-500 focus:ring focus:ring-amber-200;
+	}
+
+	.button:disabled {
+		cursor: not-allowed;
+
+		@apply bg-gray-100 text-opacity-40;
+	}
+
+	.input {
+		display: block;
+		width: 100%;
+		outline: 0;
+		border-radius: 0;
+		padding: 0.5ch;
+
+		@apply border border-gray-300 focus:border-amber-500 focus:ring focus:ring-amber-200;
+	}
+}
+
 @layer utilities {
 	.no-scrollbar::-webkit-scrollbar {
 		@apply hidden;
