@@ -1,24 +1,25 @@
 <h1>Contact</h1>
 
 <form
-	name="contact" method="post" action="/contact/success" data-netlify="true"
+	name="contact" method="post" action="/contact/success" data-netlify="true" netlify-honeypot="bot-field"
 	bind:this={form} on:input={onInput}
 >
 	<input name="form-name" value="contact" type="hidden">
+	<input name="bot-field" type="text" hidden>
 
 	<label>
 		<span>Name:</span>
-		<input class="input" id="name" name="name" type="text" autocomplete="name" placeholder="Name" required>
+		<input class="input" name="name" type="text" autocomplete="name" placeholder="Name" required>
 	</label>
 
 	<label>
 		<span>Email:</span>
-		<input class="input" id="email" name="email" type="email" autocomplete="email" placeholder="Email" required>
+		<input class="input" name="email" type="email" autocomplete="email" placeholder="Email" required>
 	</label>
 
 	<label>
 		<span>Message:</span>
-		<textarea class="input" id="message" name="message" placeholder="Message" required></textarea>
+		<textarea class="input" name="message" placeholder="Message" required></textarea>
 	</label>
 
 	<button class="button" disabled={!valid}>Submit</button>
