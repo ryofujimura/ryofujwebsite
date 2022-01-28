@@ -1,34 +1,33 @@
-<h1>Contact</h1>
+<SEO {title} />
 
-<form
-	name="contact" method="post" action="/contact/success" data-netlify="true" netlify-honeypot="bot-field"
-	bind:this={form} on:input={onInput}
->
-	<input name="form-name" value="contact" type="hidden">
-	<input name="bot-field" type="text" hidden>
+<section>
+	<h1>{title}</h1>
 
-	<label>
-		<span>Name:</span>
-		<input class="input" name="name" type="text" autocomplete="name" placeholder="Name" required>
-	</label>
+	<NetlifyForm name="contact" action="/contact/success" {valid}>
+		<label>
+			<span>Name:</span>
+			<input class="input" name="name" type="text" autocomplete="name" placeholder="Name" required>
+		</label>
 
-	<label>
-		<span>Email:</span>
-		<input class="input" name="email" type="email" autocomplete="email" placeholder="Email" required>
-	</label>
+		<label>
+			<span>Email:</span>
+			<input class="input" name="email" type="email" autocomplete="email" placeholder="Email" required>
+		</label>
 
-	<label>
-		<span>Message:</span>
-		<textarea class="input" name="message" placeholder="Message" required></textarea>
-	</label>
+		<label>
+			<span>Message:</span>
+			<textarea class="input" name="message" placeholder="Message" required></textarea>
+		</label>
 
-	<button class="button" disabled={!valid}>Submit</button>
-</form>
+		<button class="button" disabled={!valid}>Submit</button>
+	</NetlifyForm>
+</section>
 
 <style>
-	form {
+	section :global(form) {
 		display: grid;
 		gap: 0.5rem;
+		margin-top: 1em;
 	}
 
 	label {
@@ -44,16 +43,19 @@
 	span {
 		padding: 0.5ch 0;
 	}
+
+	button {
+		margin-top: 1rem;
+	}
 </style>
 
 <script lang="ts">
-	$: form = null
+	import SEO from '$lib/SEO.svelte'
+	import NetlifyForm from '$lib/form/NetlifyForm.svelte'
+
+	let title = 'Contact'
 
 	let valid: boolean = false
-
-	function onInput() {
-		valid = form.checkValidity()
-	}
 </script>
 
 <script context="module" lang="ts">

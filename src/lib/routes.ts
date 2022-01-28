@@ -25,7 +25,7 @@ const routes: Route[] = [
 		featured: true,
 	},
 	{
-		title: 'Submission success!',
+		title: 'Submitted!',
 		subtitle: 'Contact',
 		path: '/contact/success'
 	},
