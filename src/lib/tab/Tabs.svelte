@@ -10,6 +10,7 @@
 	ul {
 		position: sticky;
 		top: 0;
+		left: 0;
 		display: flex;
 		padding-top: 0.25rem;
 		overflow-x: auto;

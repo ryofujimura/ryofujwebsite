@@ -1,6 +1,6 @@
 <SEO {title} />
 
-<h1>{title}</h1>
+<h1 class="h1">{title}</h1>
 
 {#each skills as skill}
 	<Skill {skill} />

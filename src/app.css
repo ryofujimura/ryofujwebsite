@@ -35,6 +35,13 @@
 
 		@apply border border-gray-300 focus:border-amber-500 focus:ring focus:ring-amber-200;
 	}
+
+	.h1 {
+		margin-bottom: 1rem;
+		padding-bottom: 0.25em;
+
+		@apply border-b border-gray-300 text-2xl font-bold;
+	}
 }
 
 @layer utilities {

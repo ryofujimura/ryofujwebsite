@@ -1,4 +1,4 @@
-<h1 bind:offsetWidth>
+<h1 class="text-3xl font-bold" bind:offsetWidth>
 	<slot></slot>
 </h1>
 

@@ -1,7 +1,7 @@
 <SEO {title} />
 
 <section>
-	<h1>{title}</h1>
+	<h1 class="h1">{title}</h1>
 
 	<NetlifyForm name="contact" action="/contact/success" {valid}>
 		<label>
@@ -27,7 +27,6 @@
 	section :global(form) {
 		display: grid;
 		gap: 0.5rem;
-		margin-top: 1em;
 	}
 
 	label {
