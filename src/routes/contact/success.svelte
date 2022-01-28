@@ -1,1 +1,5 @@
 <h1>Thanks for your submission!</h1>
+
+<script context="module" lang="ts">
+	export const prerender = true
+</script>
