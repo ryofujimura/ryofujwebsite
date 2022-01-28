@@ -40,6 +40,10 @@
 		display: none;
 	}
 
+	details[open] summary {
+		font-weight: bold;
+	}
+
 	details[open] summary::before {
 		content: '';
 		position: absolute;

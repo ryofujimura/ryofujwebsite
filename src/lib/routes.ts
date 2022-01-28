@@ -1,3 +1,11 @@
+import works from './works'
+
+const workRoutes = works.map((work): Route => ({
+	title: work.title,
+	subtitle: 'Works',
+	path: `/works/${ work.id }`,
+}))
+
 const routes: Route[] = [
 	{
 		title: 'Home',
@@ -29,6 +37,7 @@ const routes: Route[] = [
 		subtitle: 'Contact',
 		path: '/contact/success'
 	},
+	...workRoutes,
 ]
 
 export const paths: Path[] = routes.map(({ path }) => path)

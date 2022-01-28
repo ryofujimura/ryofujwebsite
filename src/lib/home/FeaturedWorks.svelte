@@ -1,6 +1,10 @@
 <ul class="bg-gray-100">
 	{#each works as work}
-		<li>{work.title}</li>
+		<li>
+			<a href="/works/{work.id}">
+				{work.title}
+			</a>
+		</li>
 	{/each}
 </ul>
 

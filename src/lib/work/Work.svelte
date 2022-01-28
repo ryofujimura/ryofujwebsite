@@ -1,5 +1,7 @@
 <article>
-	{work.title}
+	<a href="/works/{work.id}">
+		{work.title}
+	</a>
 </article>
 
 <script lang="ts">
