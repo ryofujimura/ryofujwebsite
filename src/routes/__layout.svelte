@@ -1,7 +1,7 @@
 <div class="root">
 	<Sidebar/>
 
-	<div>
+	<div class="content">
 		<Tabs/>
 		<main>
 			<slot></slot>
@@ -19,6 +19,10 @@
 			grid-template-columns: 10rem 1fr;
 			height: 100vh;
 		}
+	}
+
+	.content {
+		overflow-y: auto;
 	}
 
 	main {

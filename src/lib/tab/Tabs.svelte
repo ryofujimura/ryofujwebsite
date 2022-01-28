@@ -8,6 +8,8 @@
 
 <style>
 	ul {
+		position: sticky;
+		top: 0;
 		display: flex;
 		padding-top: 0.25rem;
 		overflow-x: auto;
