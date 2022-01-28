@@ -25,6 +25,7 @@ type SkillName =
 type Skill = {
 	name: SkillName
 	featured: boolean
+	level: number
 }
 
 interface SkillWithWorks extends Skill {

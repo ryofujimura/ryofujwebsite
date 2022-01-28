@@ -1,5 +1,5 @@
 <article>
-	<a href="/works/{work.id}">
+	<a class="link" href="/works/{work.id}">
 		{work.title}
 	</a>
 </article>

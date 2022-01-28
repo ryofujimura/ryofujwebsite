@@ -1,9 +1,10 @@
 <a href={route.path} class="with-icon">
 	<TextIcon/>
-	{route.title}
+
+	<span class="title">{route.title}</span>
 
 	{#if route.subtitle}
-		<span>{route.subtitle}</span>
+		<span class="subtitle">{route.subtitle}</span>
 	{/if}
 </a>
 
@@ -15,12 +16,17 @@
 	}
 
 	a :global(svg) {
+		flex-shrink: 0;
 		width: 0.8em;
 		height: 0.8em;
 		opacity: 0.4;
 	}
 
-	span {
+	.title {
+		white-space: nowrap;
+	}
+
+	.subtitle {
 		opacity: 0.2;
 		font-size: 0.8em;
 	}

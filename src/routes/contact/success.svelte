@@ -1,6 +1,8 @@
 <SEO {title} />
 
-<h1>{title}</h1>
+<h1 class="h1">{title}</h1>
+
+<p>I'll be in contact shortly!</p>
 
 <script lang="ts">
 	import SEO from '$lib/SEO.svelte'

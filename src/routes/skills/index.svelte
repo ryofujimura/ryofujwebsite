@@ -2,9 +2,11 @@
 
 <h1 class="h1">{title}</h1>
 
-{#each skills as skill}
-	<Skill {skill} />
-{/each}
+<section>
+	{#each skills as skill}
+		<Skill {skill} />
+	{/each}
+</section>
 
 <script lang="ts">
 	import SEO from '$lib/SEO.svelte'

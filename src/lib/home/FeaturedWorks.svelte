@@ -1,7 +1,7 @@
 <ul class="bg-gray-100">
 	{#each works as work}
 		<li>
-			<a href="/works/{work.id}">
+			<a class="link" href="/works/{work.id}">
 				{work.title}
 			</a>
 		</li>

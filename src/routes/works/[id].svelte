@@ -1,6 +1,23 @@
+<SEO title={work.title} />
+
 <h1 class="h1">{work.title}</h1>
 
+<ul class="skills">
+	{#each work.skills as skill}
+		<li>{skill}</li>
+	{/each}
+</ul>
+
+<style>
+	.skills {
+		list-style: disc;
+		margin-left: 2em;
+	}
+</style>
+
 <script lang="ts">
+	import SEO from '$lib/SEO.svelte'
+
 	export let work: Work
 </script>
 

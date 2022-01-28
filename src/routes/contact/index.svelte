@@ -5,17 +5,17 @@
 
 	<NetlifyForm name="contact" action="/contact/success" {valid}>
 		<label>
-			<span>Name:</span>
+			<span>Name</span>
 			<input class="input" name="name" type="text" autocomplete="name" placeholder="Name" required>
 		</label>
 
 		<label>
-			<span>Email:</span>
+			<span>Email</span>
 			<input class="input" name="email" type="email" autocomplete="email" placeholder="Email" required>
 		</label>
 
 		<label>
-			<span>Message:</span>
+			<span>Message</span>
 			<textarea class="input" name="message" placeholder="Message" required></textarea>
 		</label>
 
