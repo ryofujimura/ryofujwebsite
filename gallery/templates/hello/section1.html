@@ -1,0 +1,10 @@
+{% extends "users/index.html" %}
+
+{% block body %}
+    <h1>Gallery</h1>
+    <ul>
+        {% for image in images %}
+            <li><img src="{{ image.url }}"></li>
+        {% endfor %}
+    </ul>
+{% endblock %}
