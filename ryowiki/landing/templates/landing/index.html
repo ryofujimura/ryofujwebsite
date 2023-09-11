@@ -1,10 +1,243 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>My Wikipedia Clone</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Age</title>
+    <link rel="stylesheet" href="https://en.wikipedia.org/w/load.php?lang=en&modules=ext.cite.styles%7Cext.uls.interlanguage%7Cext.visualEditor.desktopArticleTarget.noscript%7Cext.wikimediaBadges%7Cmediawiki.toc.styles%7Cskins.vector.styles.legacy%7Cwikibase.client.init&only=styles&skin=vector">
+    <style>
+        /* Custom Styles */
+        body {
+            font-family: Arial, serif;
+            font-size: 16px;
+            margin: 2rem;
+            padding: 0;
+        }
+
+        /* Header Section */
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;   
+            /* background-color: #f2f2f2; */
+            /* padding: 10px 20px; */
+        }
+
+        h1, h2 {
+            font-family: serif;
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: bold;
+        }
+
+        .search input[type="text"] {
+            width: 300px;
+            padding: 5px;
+            border: 1px solid #ccc;
+        }
+
+        .account button {
+            background-color: #0074a9;
+            color: white;
+            border: none;
+            padding: 5px 15px;
+            cursor: pointer;
+        }
+
+        /* Navigation Panel */
+        nav {
+            background-color: #f8f9fa;
+            padding: 10px;
+        }
+
+        nav ul {
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        nav li {
+            display: inline;
+            margin-right: 20px;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: #000;
+            font-weight: bold;
+        }
+
+        /* Main Content Section */
+        main {
+            padding: 20px;
+        }
+
+        .infobox {
+            float: right;
+            width: 250px;
+            /* margin on botton right left only */
+            margin: 0 0 1em 1em;
+            border: 1px solid #aaa;
+            padding: 5px;
+            background-color: #f9f9f9;
+            font-size: 14px;
+        }
+
+        /* Add more specific Wikipedia styles here if needed */
+    </style>
 </head>
 <body>
-    <h1>Welcome to My Wikipedia Clone</h1>
-    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed vehicula pharetra odio, nec vestibulum dolor feugiat non.</p>
+    <header>
+        <div class="logo">
+            Wikiryopedia
+        </div>
+        <div class="search">
+            <input type="text" placeholder="Search Wikiryopedia">
+        </div>
+        <div class="account">
+            <button>Log in</button>
+        </div>
+    </header>
+
+    <main>
+        <header>
+            <h1>Ryo Fujimura</h1>
+            <div class="dropdown-button">
+                nah
+            </div>
+        </header>
+
+        <nav class="page-toolbar">
+            <ul>
+                <li><a href="#">Talk</a></li>
+                <li><a href="#">Contributions</a></li>
+            </ul>
+        </nav>
+
+        <div class="body-content">
+            <!-- Body content here -->
+
+            <div class="indicators">
+                <!-- Indicators content here -->
+            </div>
+
+            <div class="content-text">
+                <!-- Content text content here -->
+
+                <table  class="infobox" style="border: 1px solid; float: right;" width="280">
+                    <th colspan="2" class="infobox-above fn" style="font-size:125%; background-color:#C0C0C0; padding:0.25em 1em; text-align:center;">Ryo Fujimura</th>
+                    <tr>
+                        <td colspan="2" class="infobox-image">
+                            <img  src="https://i.imgur.com/5ZQJ8ZB.jpg" alt="Ryo Fujimura" width="280" height="161">
+                        </td>
+                    </tr>
+                    <tr>
+                        <th colspan="2" class="infobox-header" style="background-color: #C0C0C0">Overview</th>
+                    </tr>
+                    <tr>
+                        <td>Manufacture</td>
+                        <td>Fujimura</td>
+                    </tr>
+                    <tr>
+                        <td>Production</td>
+                        <td>1999, 1 produced</td>
+                    </tr>
+                    <tr>
+                        <td>Assemble</td>
+                        <td>Hamamatsu, Shizuoka, Japan</td>
+                    </tr>
+                    <tr>
+                        <td>Designers</td>
+                        <td>Takahiro, and Sachiyo</td>
+                    </tr>
+                    <tr>
+                        <th colspan="2" class="infobox-header" style="background-color: #C0C0C0">Body and Chassis</th>
+                    </tr>
+                    <tr>
+                        <td>Class</td>
+                        <td>Bipedal walking human</td>
+                    </tr>
+                    <tr>
+                        <td>Body style</td>
+                        <td>Typical asian male</td>
+                    </tr>
+                    <tr>
+                        <td>Layout</td>
+                        <td>two legs, two arms, one head attached to a body</td>
+                    </tr>
+                    <tr>
+                        <th colspan="2" class="infobox-header" style="background-color: #C0C0C0">Powertrain</th>
+                    </tr>
+                    <tr>
+                        <td>Engine</td>
+                        <td>5L NARF1999</td>
+                    </tr>
+                    <tr>
+                        <td>Power output</td>
+                        <td>100 hp (US-spec) 50 hp (JP-spec)</td>
+                    </tr>
+                    <tr>
+                        <th colspan="2" class="infobox-header" style="background-color: #C0C0C0">Dimensions</th>
+                    </tr>
+                    <tr>
+                        <td>Wheelbase</td>
+                        <td>9.5 inches</td>
+                    </tr>
+                    <tr>
+                        <td>Length</td>
+                        <td>15 inches</td>
+                    </tr>
+                    <tr>
+                        <td>Width</td>
+                        <td>4 inches</td>
+                    </tr>
+                    <tr>
+                        <td>Height</td>
+                        <td>68 inches</td>
+                    </tr>
+                    <tr>
+                        <td>Dry Weight</td>
+                        <td>11 lbs.</td>
+                    </tr>
+                    <tr>
+                        <th colspan="2" class="infobox-header" style="background-color: #C0C0C0">Chronology</th>
+                    </tr>
+                    <tr>
+                        <td>Predecessor</td>
+                        <td>Moyai, Tsumugi</td>
+                    </tr>
+                    <tr>
+                        <td>Successor</td>
+                        <td>—</td>
+                    </tr>
+                </table>
+
+                <p>
+                    Ryo Fujimura (born January 15, 1999), age {{ age }}, is a notable individual known for his pursuit of knowledge and passion for computer science. As a Computer Science major at California State University, Long Beach (CSULB), he has shown dedication and commitment to the field of software engineering. Ryo Fujimura resides in Orange County, a vibrant region known for its dynamic tech scene and beautiful landscapes. This location provides him with ample opportunities to explore his interests and immerse himself in the ever-evolving world of technology. Additionally, Ryo has strong ties to Hawaii, where his parents reside. Occasional visits to the picturesque Hawaiian islands not only allow him to spend quality time with his family but also provide him with a serene backdrop to relax and recharge.
+                </p>
+
+                <h2>Academic Pursuits</h2>
+                <p>
+                    Ryo's academic journey at CSULB is marked by his relentless quest for excellence in the world of technology. His coursework in computer science has equipped him with a strong foundation in programming, algorithms, and data structures, making him a promising prospect in the field. His passion for learning and problem-solving sets him apart as a student who is destined for success in the tech industry.
+                </p>
+
+                <h2>Professional Aspirations</h2>
+                <p>
+                    Ryo Fujimura's primary interest lies in software engineering. With a deep-seated curiosity for the intricate workings of software systems, he aspires to become a proficient software engineer. His ambition is to contribute to cutting-edge projects and innovations that have a lasting impact on the digital landscape.
+                </p>
+
+                <h2>Hobbies and Interests</h2>
+                <p>
+                    Beyond his academic pursuits, Ryo has diverse interests that enrich his life. Two of his most prominent hobbies are cars and photography. His fascination with automobiles showcases his appreciation for engineering marvels on wheels, while his love for photography allows him to capture the beauty of the world around him. Through his lens, he shares his unique perspective with others.
+                </p>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <!-- Footer content here -->
+    </footer>
 </body>
 </html>

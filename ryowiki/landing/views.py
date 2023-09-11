@@ -1,10 +1,22 @@
 from django.shortcuts import render
-from django.http import HttpResponse
-
-# Create your views here.
-# landing/views.py
-# def landing_page(request):
-#     return render(request, 'landing/index.html')
+from datetime import datetime
 
 def index(request):
     return render(request, "landing/index.html")
+
+def calculate_age(birthdate):
+    today = datetime.today()
+    age = today.year - birthdate.year - ((today.month, today.day) < (birthdate.month, birthdate.day))
+    return age
+
+def age_display(request):
+    # Hardcoded birthdate
+    birthdate = datetime(1999, 7, 6)
+    
+    age = calculate_age(birthdate)
+    
+    context = {
+        'age': age,
+    }
+    
+    return render(request, 'landing/index.html', context)
