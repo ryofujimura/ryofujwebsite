@@ -1,0 +1,173 @@
+/* Custom Styles */
+body {
+    font-family: Arial, serif;
+    font-size: 14px;
+    margin: 2rem;
+    padding: 0;
+}
+
+/* Header Section */
+header {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 0;
+}
+
+h1, h2 {
+    font-family: serif;
+}
+h1 {
+    font-size: 28px;
+    font-weight: bold;
+}
+h2 {
+    display: flex;
+    font-size: 20px;
+    font-weight: normal;
+    border-bottom: 1px solid #ccc;
+    margin-top: 2em;
+}
+p {
+    font-size: 16px;
+    line-height: 1.5;
+}
+.page-header {
+    border-bottom: 1px solid #ccc;
+}
+
+.logo {
+    font-size: 30px;
+    font-weight: bold;
+    font-family: serif; 
+}
+
+.search input[type="text"] {
+    width: 300px;
+    padding: 5px;
+    border: 1px solid #ccc;
+}
+
+.account button {
+    background-color: #0074a9;
+    color: white;
+    border: none;
+    padding: 5px 15px;
+    cursor: pointer;
+}
+.dropdown-button {
+    float: right;
+    background-color: #0074a9;
+    color: white;
+    border: none;
+    padding: 5px 15px;
+    cursor: pointer;
+}
+
+/* Navigation Panel */
+nav {
+    /* background-color: #f8f9fa; */
+    padding: 10px;
+}
+
+nav ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+nav li {
+    display: inline;
+    margin-right: 20px;
+}
+
+nav a {
+    text-decoration: none;
+    color: #000;
+    font-weight: bold;
+}
+
+/* Main Content Section */
+main {
+}
+.indicators {
+    /* display: flex; */
+    justify-content: space-between;
+    padding: 10px 0;
+}
+.indicator-container {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%; /* Create a circular shape */
+    /* display: flex; */
+    /* align-items: center; */
+    justify-content: center;
+    padding: 5px;
+}
+
+/* Style the indicator light itself */
+.indicator-light {
+    width: 0px;
+    height: 0px;
+    /* background-color: green; */
+    border-radius: 50%; /* Create a circular shape */
+    animation: glow 0.5s infinite alternate;
+}
+@keyframes glow {
+    0% {
+        box-shadow: 0 0 5px 5px rgb(0, 128, 0, 1); /* Initial glow effect */
+    }
+    100% {
+        box-shadow: 0 0 5px 4px  rgba(0, 128, 0, 0.7); /* Increased glow effect */
+    }
+}
+.content-text{
+    /* off set lower */
+    float: right;
+    /* margin-top: 1em; */
+}
+.infobox {
+    
+    width: 250px;
+    /* margin on botton right left only */
+    margin: 0 0 1em 1em;
+    border: 1px solid #aaa;
+    padding: 5px;
+    background-color: #f9f9f9;
+    font-size: 14px;
+}
+/* Style the tab buttons */
+#tabs {
+    display: flex;
+    /* width: 80%; */
+    margin: 0 auto;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    overflow: hidden;
+}
+
+/* Style each tab */
+.tab {
+    flex: 1;
+    text-align: center;
+    /* padding: 10px; */
+    /* background-color: #f0f0f0; */
+    cursor: pointer;
+    position: relative;
+}
+
+/* Style the tab content */
+.tab-content {
+    display: none;
+    /* padding: 20px; */
+}
+
+/* Style the close button for each tab */
+.close-button {
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    cursor: pointer;
+}
+
+
+/* Add more specific Wikipedia styles here if needed */

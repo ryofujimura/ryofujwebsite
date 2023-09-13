@@ -7,181 +7,7 @@
     <!-- <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css"> -->
     <!-- <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script> -->
     <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
-    <style>
-        /* Custom Styles */
-        body {
-            font-family: Arial, serif;
-            font-size: 14px;
-            margin: 2rem;
-            padding: 0;
-        }
-
-        /* Header Section */
-        header {
-            display: flex;
-            justify-content: space-between;
-            padding: 10px 0;
-        }
-
-        h1, h2 {
-            font-family: serif;
-        }
-        h1 {
-            font-size: 28px;
-            font-weight: bold;
-        }
-        h2 {
-            display: flex;
-            font-size: 20px;
-            font-weight: normal;
-            border-bottom: 1px solid #ccc;
-            margin-top: 2em;
-        }
-        p {
-            font-size: 16px;
-            line-height: 1.5;
-        }
-        .page-header {
-            border-bottom: 1px solid #ccc;
-        }
-
-        .logo {
-            font-size: 30px;
-            font-weight: bold;
-            font-family: serif; 
-        }
-
-        .search input[type="text"] {
-            width: 300px;
-            padding: 5px;
-            border: 1px solid #ccc;
-        }
-
-        .account button {
-            background-color: #0074a9;
-            color: white;
-            border: none;
-            padding: 5px 15px;
-            cursor: pointer;
-        }
-        .dropdown-button {
-            float: right;
-            background-color: #0074a9;
-            color: white;
-            border: none;
-            padding: 5px 15px;
-            cursor: pointer;
-        }
-
-        /* Navigation Panel */
-        nav {
-            /* background-color: #f8f9fa; */
-            padding: 10px;
-        }
-
-        nav ul {
-            list-style-type: none;
-            padding: 0;
-            margin: 0;
-        }
-
-        nav li {
-            display: inline;
-            margin-right: 20px;
-        }
-
-        nav a {
-            text-decoration: none;
-            color: #000;
-            font-weight: bold;
-        }
-
-        /* Main Content Section */
-        main {
-        }
-        .indicators {
-            /* display: flex; */
-            justify-content: space-between;
-            padding: 10px 0;
-        }
-        .indicator-container {
-            width: 10px;
-            height: 10px;
-            border-radius: 50%; /* Create a circular shape */
-            /* display: flex; */
-            /* align-items: center; */
-            justify-content: center;
-            padding: 5px;
-        }
-
-        /* Style the indicator light itself */
-        .indicator-light {
-            width: 0px;
-            height: 0px;
-            /* background-color: green; */
-            border-radius: 50%; /* Create a circular shape */
-            animation: glow 0.5s infinite alternate;
-        }
-        @keyframes glow {
-            0% {
-                box-shadow: 0 0 5px 5px rgb(0, 128, 0, 1); /* Initial glow effect */
-            }
-            100% {
-                box-shadow: 0 0 5px 4px  rgba(0, 128, 0, 0.7); /* Increased glow effect */
-            }
-        }
-        .content-text{
-            /* off set lower */
-            float: right;
-            /* margin-top: 1em; */
-        }
-        .infobox {
-            
-            width: 250px;
-            /* margin on botton right left only */
-            margin: 0 0 1em 1em;
-            border: 1px solid #aaa;
-            padding: 5px;
-            background-color: #f9f9f9;
-            font-size: 14px;
-        }
-        /* Style the tab buttons */
-        #tabs {
-            display: flex;
-            /* width: 80%; */
-            margin: 0 auto;
-            border: 1px solid #ccc;
-            border-radius: 4px;
-            overflow: hidden;
-        }
-
-        /* Style each tab */
-        .tab {
-            flex: 1;
-            text-align: center;
-            /* padding: 10px; */
-            /* background-color: #f0f0f0; */
-            cursor: pointer;
-            position: relative;
-        }
-
-        /* Style the tab content */
-        .tab-content {
-            display: none;
-            /* padding: 20px; */
-        }
-
-        /* Style the close button for each tab */
-        .close-button {
-            position: absolute;
-            top: 5px;
-            right: 5px;
-            cursor: pointer;
-        }
-
-
-        /* Add more specific Wikipedia styles here if needed */
-    </style>
+    <link rel="stylesheet" text="text/css" href="/static/landing/css/style.css">
 </head>
 <body>
     <header>
@@ -197,7 +23,6 @@
     </header>
 
     <main>
-    
         <header class="page-header">
             <h1>
                 Ryo Fujimura
@@ -206,14 +31,8 @@
                 nah
             </div>
         </header>
-            <div class="indicators">
-            <!-- Indicators content here -->
-            <div class="indicator-container">
-                <!-- Indicator light -->
-                <div class="indicator-light"></div>
-            </div>
+        <
 
-        </div>
         <div id="tabs">
             <div class="tab" data-tab="tab1">Tab 1<span class="close-button" onclick="closeTab('tab1')">✕</span></div>
             <div class="tab" data-tab="tab2">Tab 2<span class="close-button" onclick="closeTab('tab2')">✕</span></div>
@@ -221,116 +40,15 @@
     
         <div id="tab1" class="tab-content" style="display:block;">
             <!-- Content for Tab 1 -->
-            <div class="body-content">
-                <!-- Body content here -->
-                <div class="content-text">
-                    <!-- Content text content here -->
-    
-                    <table  class="infobox" style="border: 1px solid; float: right;" width="280">
-                        <th colspan="2" class="infobox-above fn" style="font-size:125%; background-color:#C0C0C0; padding:0.25em 1em; text-align:center;">Ryo Fujimura</th>
-                        <tr>
-                            <td colspan="2" class="infobox-image">
-                                <img  src="https://i.imgur.com/5ZQJ8ZB.jpg" alt="Ryo Fujimura" width="280" height="161">
-                            </td>
-                        </tr>
-                        <tr>
-                            <th colspan="2" class="infobox-header" style="background-color: #C0C0C0">Overview</th>
-                            </tr>
-                        <tr>
-                            <td>Manufacture</td>
-                            <td>Fujimura</td>
-                        </tr>
-                        <tr>
-                            <td>Production</td>
-                            <td>1999, 1 produced</td>
-                        </tr>
-                        <tr>
-                            <td>Assemble</td>
-                            <td>
-                                <a href="https://en.wikipedia.org/wiki/Hamamatsu" title="Hamamatsu">Hamamatsu</a>,
-                                <a href="https://en.wikipedia.org/wiki/Shizuoka_Prefecture" title="Shizuoka Prefecture">Shizuoka,</a>
-                                <a href="https://en.wikipedia.org/wiki/Japan" title="Japan">Japan</a>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>Designers</td>
-                            <td>Takahiro, and Sachiyo</td>
-                        </tr>
-                        <tr>
-                            <th colspan="2" class="infobox-header" style="background-color: #C0C0C0">Body and Chassis</th>
-                        </tr>
-                        <tr>
-                            <td>Class</td>
-                            <td>Bipedal walking human</td>
-                        </tr>
-                        <tr>
-                            <td>Body style</td>
-                            <td>Typical asian male</td>
-                        </tr>
-                        <tr>
-                            <td>Layout</td>
-                            <td>two legs, two arms, one head attached to a body</td>
-                        </tr>
-                        <tr>
-                            <th colspan="2" class="infobox-header" style="background-color: #C0C0C0">Dimensions</th>
-                        </tr>
-                        <tr>
-                            <td>Wheelbase</td>
-                            <td>9.5 inches</td>
-                        </tr>
-                        <tr>
-                            <td>Length</td>
-                            <td>15 inches</td>
-                        </tr>
-                        <tr>
-                            <td>Width</td>
-                            <td>4 inches</td>
-                        </tr>
-                        <tr>
-                            <td>Height</td>
-                            <td>68 inches</td>
-                        </tr>
-                        <tr>
-                            <td>Dry Weight</td>
-                            <td>11 lbs.</td>
-                        </tr>
-                        <tr>
-                            <th colspan="2" class="infobox-header" style="background-color: #C0C0C0">Chronology</th>
-                        </tr>
-                        <tr>
-                            <td>Predecessor</td>
-                            <td>Moyai, Tsumugi</td>
-                        </tr>
-                        <tr>
-                            <td>Successor</td>
-                            <td>—</td>
-                        </tr>
-                    </table>
-                    <p>
-                        Ryo Fujimura (born January 15, 1999), age {{ age }}, is a notable individual known for his pursuit of knowledge and passion for computer science. As a Computer Science major at California State University, Long Beach (CSULB), he has shown dedication and commitment to the field of software engineering. Ryo Fujimura resides in Orange County, a vibrant region known for its dynamic tech scene and beautiful landscapes. This location provides him with ample opportunities to explore his interests and immerse himself in the ever-evolving world of technology. Additionally, Ryo has strong ties to Hawaii, where his parents reside. Occasional visits to the picturesque Hawaiian islands not only allow him to spend quality time with his family but also provide him with a serene backdrop to relax and recharge.
-                    </p>
-    
-                    <h2>Academic Pursuits</h2>
-                    <p>
-                        Ryo's academic journey at CSULB is marked by his relentless quest for excellence in the world of technology. His coursework in computer science has equipped him with a strong foundation in programming, algorithms, and data structures, making him a promising prospect in the field. His passion for learning and problem-solving sets him apart as a student who is destined for success in the tech industry.
-                    </p>
-    
-                    <h2>Professional Aspirations</h2>
-                    <p>
-                        Ryo Fujimura's primary interest lies in software engineering. With a deep-seated curiosity for the intricate workings of software systems, he aspires to become a proficient software engineer. His ambition is to contribute to cutting-edge projects and innovations that have a lasting impact on the digital landscape.
-                    </p>
-    
-                    <h2>Hobbies and Interests</h2>
-                    <p>
-                        Beyond his academic pursuits, Ryo has diverse interests that enrich his life. Two of his most prominent hobbies are cars and photography. His fascination with automobiles showcases his appreciation for engineering marvels on wheels, while his love for photography allows him to capture the beauty of the world around him. Through his lens, he shares his unique perspective with others.
-                    </p>
-                </div>
-            </div>
+            {% include 'landing/tab1.html' %}
         </div>
             
         <div id="tab2" class="tab-content">
             <!-- Content for Tab 2 -->
-            tab2
+            <!-- insert tab2.html --> 
+            {% include 'landing/tab2.html' %}
+            
+
         </div>
         </div>
     </main>
