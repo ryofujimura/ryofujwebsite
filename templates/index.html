@@ -5,26 +5,111 @@
     <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
 </head>
 <body>
-    <header>
-        <h1>Welcome to My Portfolio</h1>
-    </header>
-    <div class="profile">
-        <p>Profile information goes here.</p>
+    <div class="container">
+        <header>
+            <h1>Welcome to My Portfolio</h1>
+        </header>
+        <img src="{{ url_for('static', filename='img-asset/big-image.png') }}" alt="Profile Image" class="profile-image">
+        <div class="profile">
+            <div class="description">
+                <p>Data Engineer.</p>
+            </div>
+            <div class="description">
+                <p>Ryo Fujimura</p>
+            </div>
+            <div class="hyperlink-container">
+                <a href="https://github.com/ryofujimura" class="hyperlink">
+                    <img src="{{ url_for('static', filename='img-asset/github.png') }}" alt="Github Image" class="hyperlink-image">
+                    Github
+                </a>
+                <a href="https://www.linkedin.com/in/ryofujimura/" class="hyperlink">
+                    <img src="{{ url_for('static', filename='img-asset/linkedin.png') }}" alt="Profile Image" class="hyperlink-image">
+                    LinkedIn
+                </a>
+                <a href="https://drive.google.com/file/d/1TdtNaYYYiZngj8SL2CL7R8NwLqFlHUCD/view?usp=sharing" class="hyperlink">
+                    <img src="{{ url_for('static', filename='img-asset/resume.png') }}" alt="Resume Image" class="hyperlink-image">
+                    Resume
+                </a>
+            </div>
+
+        </div>
+        <div class="projects-container">
+            <a href="link_to_project_page.html" class="project">
+                <div class="project-icon-title">
+                    <span class="project-title">Project Title</span>
+                    <img src="path_to_icon.png" alt="Project Icon" class="project-icon" style="width:50px; height:50px;">
+                </div>
+                <div class="project-description">
+                    <p>This is a brief description of what the project entails. It discusses the goals, the technology used, and the outcomes.</p>
+                </div>
+            </a>
+            <!-- Repeat for other projects -->
+            <a href="link_to_project_page.html" class="project">
+                <div class="project-icon-title">
+                    <span class="project-title">Project Title</span>
+                    <img src="path_to_icon.png" alt="Project Icon" class="project-icon" style="width:50px; height:50px;">
+                </div>
+                <div class="project-description">
+                    <p>This is a brief description of what the project entails. It discusses the goals, the technology used, and the outcomes.</p>
+                </div>
+            </a>
+            <a href="link_to_project_page.html" class="project">
+                <div class="project-icon-title">
+                    <span class="project-title">Project Title</span>
+                    <img src="path_to_icon.png" alt="Project Icon" class="project-icon" style="width:50px; height:50px;">
+                </div>
+                <div class="project-description">
+                    <p>This is a brief description of what the project entails. It discusses the goals, the technology used, and the outcomes.</p>
+                </div>
+            </a>
+            <a href="link_to_project_page.html" class="project">
+                <div class="project-icon-title">
+                    <span class="project-title">Project Title</span>
+                    <img src="path_to_icon.png" alt="Project Icon" class="project-icon" style="width:50px; height:50px;">
+                </div>
+                <div class="project-description">
+                    <p>This is a brief description of what the project entails. It discusses the goals, the technology used, and the outcomes.</p>
+                </div>
+            </a>
+            <a href="link_to_project_page.html" class="project">
+                <div class="project-icon-title">
+                    <span class="project-title">Project Title</span>
+                    <img src="path_to_icon.png" alt="Project Icon" class="project-icon" style="width:50px; height:50px;">
+                </div>
+                <div class="project-description">
+                    <p>This is a brief description of what the project entails. It discusses the goals, the technology used, and the outcomes.</p>
+                </div>
+            </a>
+            <a href="link_to_project_page.html" class="project">
+                <div class="project-icon-title">
+                    <span class="project-title">Project Title</span>
+                    <img src="path_to_icon.png" alt="Project Icon" class="project-icon" style="width:50px; height:50px;">
+                </div>
+                <div class="project-description">
+                    <p>This is a brief description of what the project entails. It discusses the goals, the technology used, and the outcomes.</p>
+                </div>
+            </a>
+            <a href="link_to_project_page.html" class="project">
+                <div class="project-icon-title">
+                    <span class="project-title">Project Title</span>
+                    <img src="path_to_icon.png" alt="Project Icon" class="project-icon" style="width:50px; height:50px;">
+                </div>
+                <div class="project-description">
+                    <p>This is a brief description of what the project entails. It discusses the goals, the technology used, and the outcomes.</p>
+                </div>
+            </a>
+            <a href="link_to_project_page.html" class="project">
+                <div class="project-icon-title">
+                    <span class="project-title">Project Title</span>
+                    <img src="path_to_icon.png" alt="Project Icon" class="project-icon" style="width:50px; height:50px;">
+                </div>
+                <div class="project-description">
+                    <p>This is a brief description of what the project entails. It discusses the goals, the technology used, and the outcomes.</p>
+                </div>
+            </a>
+
+        </div>
+           
     </div>
-    <div class="description">
-        <p>Description 1 about your skills or experience.</p>
-    </div>
-    <div class="description">
-        <p>Description 2 about your projects or achievements.</p>
-    </div>
-    <div class="hyperlink"><a href="#">Link 1</a></div>
-    <div class="hyperlink"><a href="#">Link 2</a></div>
-    <div class="hyperlink"><a href="#">Link 3</a></div>
-    <div class="project">
-        <p>Details about Project 1.</p>
-    </div>
-    <footer>
-        <p>© 2024 My Portfolio</p>
-    </footer>
 </body>
 </html>

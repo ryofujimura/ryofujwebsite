@@ -1,58 +1,162 @@
 /* Base styles */
-body, html {
+html, body {
+    height: 100%; /* Limits the height of the HTML and body to the viewport */
     margin: 0;
     padding: 0;
-    font-family: Arial, sans-serif;
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    grid-auto-rows: minmax(100px, auto);
-    gap: 10px;
+    overflow: hidden; /* Prevents scrolling on the entire page */
 }
 
-/* Header */
+
+.container {
+    display: flex;
+    flex-direction: column; /* Stacks children vertically */
+    height: 100vh; /* Full viewport height */
+    margin: 0;
+    padding: 0;
+    overflow: hidden; /* Prevents scrolling on the main container */
+}
+
+
+header, .profile {
+    flex-shrink: 0; /* Do not shrink these elements */
+    background-color: #f4f4f0;
+    padding: 20px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+
 header {
     background-color: #4CAF50; /* Green */
     color: white;
-    grid-column: 1 / -1; /* Full width */
-    text-align: center;
-    padding: 20px;
 }
 
-/* Profile section */
+
 .profile {
-    background-color: #f2f2f2;
-    grid-column: 1 / -1;
-    padding: 20px;
-    text-align: center;
+    display: grid;
+    grid-template-columns: repeat(1, 1fr); /* Adjust based on content if needed */
+    grid-auto-rows: minmax(50px, auto);
+    gap: 10px;
 }
 
-/* Description sections */
+.profile-image {
+    width: 150px; /* Adjust size as needed */
+    height: 150px; /* Adjust size as needed */
+    border-radius: 50%; /* Creates a circle */
+    object-fit: cover; /* Ensures the image covers the space without distorting */
+    display: block; /* Optional, for centering if needed */
+    margin: 20px auto; /* Centers the image horizontally and adds vertical spacing */
+}
+
+@media (max-width: 768px) {
+    .profile-image {
+        width: 100px; /* Smaller size on mobile devices */
+        height: 100px;
+    }
+    .hyperlink-img {
+        width: 20px; /* Smaller size for icons on mobile devices */
+        height: 20px;
+    }
+}
+
 .description {
-    background-color: #f4f4f4;
-    grid-column: 1 / -1;
-    padding: 20px;
+    grid-column: 1 / -1; /* Spans full width */
+    background-color: #f0f0f0; /* Light grey background */
 }
 
-/* Hyperlinks */
+.hyperlink-container {
+    display: flex;
+    justify-content: space-evenly;
+    grid-column: 1 / -1; /* Spans full width */
+}
+
 .hyperlink {
-    background-color: #ddd;
-    text-align: center;
-    padding: 20px;
-}
-
-/* Projects */
-.project {
-    background-color: #bbb;
-    grid-column: 1 / -1;
-    padding: 20px;
-    text-align: center;
-}
-
-/* Footer */
-footer {
-    background-color: #005A9C; /* Blue */
-    color: white;
-    grid-column: 1 / -1;
-    text-align: center;
+    display: flex;
+    align-items: center; /* Aligns image and text vertically */
+    gap: 10px; /* Space between the image and text */
     padding: 10px;
+    background-color: #ADD8E6; /* Light blue */
+    border-radius: 5px;
+    text-decoration: none;
+    color: black;
+    font-weight: bold;
+}
+
+.hyperlink img {
+    width: 20px; /* Set appropriate size for your icons */
+    height: 20px; /* Maintain aspect ratio */
+}
+
+.hyperlink:hover {
+    background-color: #cccccc; /* Light grey background on hover */
+    transition: background-color 0.3s; /* Smooth transition for the background color */
+}
+
+.projects-container {
+    flex-grow: 1; /* Takes up any remaining space */
+    overflow-y: auto; /* Enables vertical scrolling */
+    background-color: #e0e0e0; /* Light grey background for visibility */
+    padding: 20px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+
+.project {
+    display: grid;
+    grid-template-columns: 2fr 5fr; /* Column setup with a 2:5 ratio */
+    align-items: start; /* Aligns items to the top */
+    gap: 20px; /* Space between the icon/title area and the description */
+    padding: 20px;
+    background-color: #f0f0f0; /* Light grey background */
+    margin-bottom: 10px; /* Space between individual projects */
+    box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+    text-decoration: none; /* Removes underline from links */
+    color: inherit; /* Ensures text color inherits from the parent */
+}
+
+.project-icon-title {
+    display: flex;
+    flex-direction: column; /* Stacks children vertically */
+    align-items: center; /* Centers children horizontally */
+    justify-content: center; /* Centers children vertically */
+}
+
+.project-icon {
+    margin-top: 10px; /* Space between the title and the icon */
+}
+
+.project-title {
+    font-size: 1.2em;
+    font-weight: bold;
+}
+
+.project-description {
+    text-align: left;
+    font-size: 1em;
+}
+
+
+.project-indicator {
+    /* Styles for the indicator (can be an icon or a small graphic) */
+    width: 50px; /* Example width, adjust as needed */
+    height: 50px; /* Example height, adjust as needed */
+    background-color: #4CAF50; /* Example color, adjust as needed */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+}
+
+.project-logo {
+    /* Styles for the logo */
+    width: 100px; /* Adjust based on actual logo dimensions */
+    grid-row: 1 / span 2; /* Span across two rows */
+}
+
+
+footer {
+    grid-column: 1 / -1; /* Full width */
+    background-color: #005A9C;
+    color: white;
+    padding: 10px;
+    text-align: center;
 }
