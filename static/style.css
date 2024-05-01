@@ -1,175 +1,254 @@
 /* Base styles */
-html, body {
-    height: 100%; /* Limits the height of the HTML and body to the viewport */
-    margin: 0;
-    padding: 0;
-    overflow: hidden; /* Prevents scrolling on the entire page */
+html,
+body {
+  height: 100%;
+  min-height: 100vh; /* Ensures at least full viewport height coverage */
+  font-family: "Trispace", sans-serif;
+  font-optical-sizing: auto;
+  font-style: normal;
+  font-optical-sizing: auto;
 }
 
+body {
+  margin: 0; /* Removes default margin */
+  padding: 0; /* Removes default padding */
+  height: 100vh; /* Full viewport height */
+  width: 100vw; /* Full viewport width */
+  display: flex; /* Establishes a flex container */
+  flex-direction: column; /* Stacks child elements vertically */
+  align-items: stretch; /* Stretches child elements to fit the container width */
+  background-image: linear-gradient(
+    150deg,
+    #f8f8fc,
+    #e1e2e8
+  ); /* Applies the gradient */
+}
 
 .container {
-    display: flex;
-    flex-direction: column; /* Stacks children vertically */
-    height: 100vh; /* Full viewport height */
-    margin: 0;
-    padding: 0;
-    overflow: hidden; /* Prevents scrolling on the main container */
+  display: flex;
+  flex-direction: column; /* Stacks children vertically */
+  height: 100vh; /* Full viewport height */
+  margin: 0;
+  padding: 0;
+  overflow: hidden; /* Prevents scrolling on the main container */
 }
 
-
-header, .profile {
-    flex-shrink: 0; /* Do not shrink these elements */
-    background-color: #f4f4f0;
-    padding: 20px;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+header,
+.profile {
+  flex-shrink: 0; /* Do not shrink these elements */
+  background-color: #f4f4f0;
+  padding: 0px;
+  /* box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); */
 }
-
 
 header {
-    background-color: #4CAF50; /* Green */
-    color: white;
+  display: flex; /* Ensures the content is centered */
+  align-items: center; /* Center vertically */
+  justify-content: center; /* Center horizontally */
+  padding: 0px; /* No padding */
+  background-color: transparent; /* No background color */
 }
 
+header img {
+  height: 27px; /* Set the height to 27px */
+  width: auto; /* Automatically adjust the width to maintain the aspect ratio */
+  padding: 5px;
+}
 
 .profile {
-    display: grid;
-    grid-template-columns: repeat(1, 1fr); /* Adjust based on content if needed */
-    grid-auto-rows: minmax(50px, auto);
-    gap: 10px;
+  display: flex; /* Using flex to easily manage children */
+  flex-direction: column; /* Stacks children vertically */
+  align-items: center; /* Centers children horizontally */
+  gap: 10px; /* Maintains spacing between items */
+  background-color: transparent;
+  font-weight: bold;
 }
 
 .profile-image {
-    width: 150px; /* Adjust size as needed */
-    height: 150px; /* Adjust size as needed */
-    border-radius: 50%; /* Creates a circle */
-    object-fit: cover; /* Ensures the image covers the space without distorting */
-    display: block; /* Optional, for centering if needed */
-    margin: 20px auto; /* Centers the image horizontally and adds vertical spacing */
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  object-fit: cover;
+  display: block;
+  margin: 20px auto;
+  padding: 20px;
+  box-shadow: 18px 18px 30px #d1d9e6, /* Shadow 1 */ -18px -18px 30px #ffffff; /* Shadow 2 */
 }
 
 @media (max-width: 768px) {
-    .profile-image {
-        width: 100px; /* Smaller size on mobile devices */
-        height: 100px;
-    }
-    .hyperlink-img {
-        width: 20px; /* Smaller size for icons on mobile devices */
-        height: 20px;
-    }
+  .profile-image {
+    width: 240px; /* Smaller size on mobile devices */
+    height: 240px; /* Adjust height to maintain aspect ratio */
+  }
+}
+
+.gradient-text {
+  font-size: 20px; /* Example font size, adjust as needed */
+  background: linear-gradient(150deg, #969ab4, #c4ceee);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: transparent; /* Fallback for non-webkit browsers */
 }
 
 .description {
-    grid-column: 1 / -1; /* Spans full width */
-    background-color: #f0f0f0; /* Light grey background */
+  width: 80%; /* Example to control width */
+  text-align: center;
+  margin: -24px 0; /* Adds vertical margin for separation */
+}
+
+.description1 {
+  font-size: 1.3em;
+}
+
+.description2 {
+  font-size: 2em;
 }
 
 .hyperlink-container {
-    display: flex;
-    justify-content: space-evenly;
-    grid-column: 1 / -1; /* Spans full width */
+  display: flex;
+  justify-content: space-around; /* Distributes space evenly around items */
+  align-items: center; /* Aligns items vertically in the center */
+  max-width: 420px; /* Maximum width of the container */
+  width: 100%; /* Use full width up to the maximum */
+  margin: 0 auto; /* Centers the container horizontally */
 }
 
 .hyperlink {
-    display: flex;
-    align-items: center; /* Aligns image and text vertically */
-    gap: 10px; /* Space between the image and text */
-    padding: 10px;
-    background-color: #cccccc; /* Light blue */
-    border-radius: 5px;
-    text-decoration: none;
-    color: black;
-    font-weight: bold;
+  display: flex;
+  align-items: center; /* Aligns image and text vertically */
+  gap: 10px; /* Space between the image and text */
+  padding: 10px;
+  background-color: transparent; /* Light blue, adjust if needed */
+  border-radius: 5px;
+  text-decoration: none;
+  color: #919191; /* Set text color */
+  font-weight: bold;
+  font-size: 1.3em;
+}
+
+.hyperlink {
+  flex-grow: 1; /* Allows each link to grow and fill the available space */
+  text-align: center; /* Centers text within each link */
+  padding: 10px; /* Adds padding inside each link */
+  box-sizing: border-box; /* Includes padding in the width calculation */
+}
+
+.hyperlink svg {
+  width: 24px; /* Set width, and height will scale automatically */
+  height: auto; /* Maintains the aspect ratio */
+  fill: #919191; /* Color of the SVG */
+  vertical-align: middle; /* Aligns SVG with the text */
 }
 
 .hyperlink img {
-    width: 20px; /* Set appropriate size for your icons */
-    height: 20px; /* Maintain aspect ratio */
+  filter: grayscale(100%) sepia(100%) brightness(60%) contrast(90%);
+  width: 20px;
+  height: 20px;
 }
-
-.hyperlink-image {
-    filter: grayscale(100%); /* Converts the image to grayscale */
-    width: 50px; /* Maintain this width or adjust as needed */
-    height: auto; /* This maintains the image's original aspect ratio */
-    object-fit: contain; /* Ensures the image fits within the dimensions specified without distorting */
-}
-
 
 .hyperlink:hover {
-    background-color: #ADD8E6; /* Light grey background on hover */
-    transition: background-color 0.3s; /* Smooth transition for the background color */
+  color: #260d03; /* Light grey background on hover */
+  transition: background-color 0.3s; /* Smooth transition for the background color */
 }
 
-.hyperlink:hover .hyperlink-image {
-    filter: none; /* Removes the grayscale filter on hover */
+/* Default grayscale filter for all icons */
+.hyperlink-image {
+  filter: grayscale(100%);
 }
 
+/* Hover effects for each icon triggered by hovering the hyperlink */
+.hyperlink:hover .github-icon {
+  filter: none;
+  fill: #6e5494; /* Purple for GitHub */
+  color: #add8e6; /* Light grey background on hover */
+  transition: background-color 0.3s;
+}
+
+.hyperlink:hover .linkedin-icon {
+  filter: none;
+  fill: #0a66c2; /* Blue for LinkedIn */
+}
+
+.hyperlink:hover .resume-icon {
+  filter: none;
+  fill: #000000; /* Black for Resume */
+}
+
+@media (max-width: 768px) {
+  .hyperlink-img {
+    width: 20px; /* Smaller size for icons on mobile devices */
+    height: 20px;
+  }
+}
 
 .projects-container {
-    flex-grow: 1; /* Takes up any remaining space */
-    overflow-y: auto; /* Enables vertical scrolling */
-    background-color: #e0e0e0; /* Light grey background for visibility */
-    padding: 20px;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  flex-grow: 1; /* Takes up any remaining space */
+  overflow-y: auto; /* Enables vertical scrolling */
+  background-color: #e0e0e0; /* Light grey background for visibility */
+  padding: 10px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
 
-
 .project {
-    display: grid;
-    grid-template-columns: 2fr 5fr; /* Column setup with a 2:5 ratio */
-    align-items: start; /* Aligns items to the top */
-    gap: 20px; /* Space between the icon/title area and the description */
-    padding: 20px;
-    background-color: #f0f0f0; /* Light grey background */
-    margin-bottom: 10px; /* Space between individual projects */
-    box-shadow: 0 1px 3px rgba(0,0,0,0.1);
-    text-decoration: none; /* Removes underline from links */
-    color: inherit; /* Ensures text color inherits from the parent */
+  display: grid;
+  grid-template-columns: 2fr 5fr; /* Column setup with a 2:5 ratio */
+  align-items: start; /* Aligns items to the top */
+  gap: 20px; /* Space between the icon/title area and the description */
+  padding: 20px;
+  background-color: #f0f0f0; /* Light grey background */
+  margin: 10px; /* Space between individual projects */
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  text-decoration: none; /* Removes underline from links */
+  color: inherit; /* Ensures text color inherits from the parent */
+  max-width: 500px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .project-icon-title {
-    display: flex;
-    flex-direction: column; /* Stacks children vertically */
-    align-items: center; /* Centers children horizontally */
-    justify-content: center; /* Centers children vertically */
+  display: flex;
+  flex-direction: column; /* Stacks children vertically */
+  align-items: center; /* Centers children horizontally */
+  justify-content: center; /* Centers children vertically */
 }
 
 .project-icon {
-    margin-top: 10px; /* Space between the title and the icon */
+  margin-top: 10px; /* Space between the title and the icon */
 }
 
 .project-title {
-    font-size: 1.2em;
-    font-weight: bold;
+  font-size: 1.2em;
+  font-weight: bold;
 }
 
 .project-description {
-    text-align: left;
-    font-size: 1em;
+  text-align: left;
+  font-size: 1.3em;
+  font-weight: bold;
 }
 
-
 .project-indicator {
-    /* Styles for the indicator (can be an icon or a small graphic) */
-    width: 50px; /* Example width, adjust as needed */
-    height: 50px; /* Example height, adjust as needed */
-    background-color: #4CAF50; /* Example color, adjust as needed */
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    border-radius: 50%;
+  /* Styles for the indicator (can be an icon or a small graphic) */
+  width: 50px; /* Example width, adjust as needed */
+  height: 50px; /* Example height, adjust as needed */
+  background-color: #4caf50; /* Example color, adjust as needed */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
 }
 
 .project-logo {
-    /* Styles for the logo */
-    width: 100px; /* Adjust based on actual logo dimensions */
-    grid-row: 1 / span 2; /* Span across two rows */
+  /* Styles for the logo */
+  width: 100px; /* Adjust based on actual logo dimensions */
+  grid-row: 1 / span 2; /* Span across two rows */
 }
 
-
 footer {
-    grid-column: 1 / -1; /* Full width */
-    background-color: #005A9C;
-    color: white;
-    padding: 10px;
-    text-align: center;
+  grid-column: 1 / -1; /* Full width */
+  background-color: #005a9c;
+  color: white;
+  padding: 10px;
+  text-align: center;
 }
