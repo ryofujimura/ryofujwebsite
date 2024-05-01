@@ -44,85 +44,23 @@
                     Resume
                 </a>
             </div>
-
         </div>
         <div class="projects-container">
-            <a href="link_to_project_page.html" class="project">
+            <!-- Repeat for other projects -->
+            {% for project in projects %}
+            <a href="{{ project.title }}.html" class="project">
                 <div class="project-icon-title">
-                    <span class="project-title">Project Title</span>
-                    <img src="path_to_icon.png" alt="Project Icon" class="project-icon" style="width:50px; height:50px;">
+                    <span class="project-title">{{ project.title }}</span>
+                    <img src="{{ url_for('static', filename='img-asset/'+project.image) }}" alt="Project Icon" class="project-icon" style="width:50px; height:50px;">
                 </div>
                 <div class="project-description">
                     <p>
-                        Data Management & Analyst
+                        {{ project.description }}
                     </p>
                 </div>
             </a>
-            <!-- Repeat for other projects -->
-            <a href="link_to_project_page.html" class="project">
-                <div class="project-icon-title">
-                    <span class="project-title">Project Title</span>
-                    <img src="path_to_icon.png" alt="Project Icon" class="project-icon" style="width:50px; height:50px;">
-                </div>
-                <div class="project-description">
-                    <p>This is a brief description of what the project entails. It discusses the goals, the technology used, and the outcomes.</p>
-                </div>
-            </a>
-            <a href="link_to_project_page.html" class="project">
-                <div class="project-icon-title">
-                    <span class="project-title">Project Title</span>
-                    <img src="path_to_icon.png" alt="Project Icon" class="project-icon" style="width:50px; height:50px;">
-                </div>
-                <div class="project-description">
-                    <p>This is a brief description of what the project entails. It discusses the goals, the technology used, and the outcomes.</p>
-                </div>
-            </a>
-            <a href="link_to_project_page.html" class="project">
-                <div class="project-icon-title">
-                    <span class="project-title">Project Title</span>
-                    <img src="path_to_icon.png" alt="Project Icon" class="project-icon" style="width:50px; height:50px;">
-                </div>
-                <div class="project-description">
-                    <p>This is a brief description of what the project entails. It discusses the goals, the technology used, and the outcomes.</p>
-                </div>
-            </a>
-            <a href="link_to_project_page.html" class="project">
-                <div class="project-icon-title">
-                    <span class="project-title">Project Title</span>
-                    <img src="path_to_icon.png" alt="Project Icon" class="project-icon" style="width:50px; height:50px;">
-                </div>
-                <div class="project-description">
-                    <p>This is a brief description of what the project entails. It discusses the goals, the technology used, and the outcomes.</p>
-                </div>
-            </a>
-            <a href="link_to_project_page.html" class="project">
-                <div class="project-icon-title">
-                    <span class="project-title">Project Title</span>
-                    <img src="path_to_icon.png" alt="Project Icon" class="project-icon" style="width:50px; height:50px;">
-                </div>
-                <div class="project-description">
-                    <p>This is a brief description of what the project entails. It discusses the goals, the technology used, and the outcomes.</p>
-                </div>
-            </a>
-            <a href="link_to_project_page.html" class="project">
-                <div class="project-icon-title">
-                    <span class="project-title">Project Title</span>
-                    <img src="path_to_icon.png" alt="Project Icon" class="project-icon" style="width:50px; height:50px;">
-                </div>
-                <div class="project-description">
-                    <p>This is a brief description of what the project entails. It discusses the goals, the technology used, and the outcomes.</p>
-                </div>
-            </a>
-            <a href="link_to_project_page.html" class="project">
-                <div class="project-icon-title">
-                    <span class="project-title">Project Title</span>
-                    <img src="path_to_icon.png" alt="Project Icon" class="project-icon" style="width:50px; height:50px;">
-                </div>
-                <div class="project-description">
-                    <p>This is a brief description of what the project entails. It discusses the goals, the technology used, and the outcomes.</p>
-                </div>
-            </a>
-
+            {% endfor %}   
+        
         </div>
            
     </div>

@@ -185,9 +185,9 @@ header img {
 .projects-container {
   flex-grow: 1; /* Takes up any remaining space */
   overflow-y: auto; /* Enables vertical scrolling */
-  background-color: #e0e0e0; /* Light grey background for visibility */
+  /* background-color: #e0e0e0; Light grey background for visibility */
   padding: 10px;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  /* box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.5); */
 }
 
 .project {
@@ -196,7 +196,7 @@ header img {
   align-items: start; /* Aligns items to the top */
   gap: 20px; /* Space between the icon/title area and the description */
   padding: 20px;
-  background-color: #f0f0f0; /* Light grey background */
+  /* background-color: #f0f0f0; Light grey background */
   margin: 10px; /* Space between individual projects */
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
   text-decoration: none; /* Removes underline from links */
