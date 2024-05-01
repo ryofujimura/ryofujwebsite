@@ -74,7 +74,7 @@ header {
     align-items: center; /* Aligns image and text vertically */
     gap: 10px; /* Space between the image and text */
     padding: 10px;
-    background-color: #ADD8E6; /* Light blue */
+    background-color: #cccccc; /* Light blue */
     border-radius: 5px;
     text-decoration: none;
     color: black;
@@ -86,10 +86,23 @@ header {
     height: 20px; /* Maintain aspect ratio */
 }
 
+.hyperlink-image {
+    filter: grayscale(100%); /* Converts the image to grayscale */
+    width: 50px; /* Maintain this width or adjust as needed */
+    height: auto; /* This maintains the image's original aspect ratio */
+    object-fit: contain; /* Ensures the image fits within the dimensions specified without distorting */
+}
+
+
 .hyperlink:hover {
-    background-color: #cccccc; /* Light grey background on hover */
+    background-color: #ADD8E6; /* Light grey background on hover */
     transition: background-color 0.3s; /* Smooth transition for the background color */
 }
+
+.hyperlink:hover .hyperlink-image {
+    filter: none; /* Removes the grayscale filter on hover */
+}
+
 
 .projects-container {
     flex-grow: 1; /* Takes up any remaining space */
