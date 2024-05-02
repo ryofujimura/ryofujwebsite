@@ -252,6 +252,8 @@ header img {
   margin-left: auto;
   margin-right: auto;
 }
+
+
 .project-role {
   text-align: left;
   font-size: 1.5em;
@@ -260,7 +262,11 @@ header img {
   margin-top: auto;
   margin-bottom: auto;
 }
-
+@media (max-width: 530px) {
+  .project-role {
+    font-size: 1.2em;
+  }
+}
 .project-indicator {
   /* Styles for the indicator (can be an icon or a small graphic) */
   width: 50px; /* Example width, adjust as needed */
