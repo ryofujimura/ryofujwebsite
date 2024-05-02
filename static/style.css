@@ -240,11 +240,16 @@ header img {
   max-height: 21px; /* Maintains the aspect ratio */
 }
 
+.project_page{
+  padding: 10px;
+  margin-left: auto;
+  margin-right: auto;
+}
 .project-role {
   text-align: left;
   font-size: 1.5em;
   font-weight: bold;
-  margin-left: 20px;
+  /* margin-left: 20px; */
   margin-top: auto;
   margin-bottom: auto;
 }
@@ -269,13 +274,14 @@ header img {
 .image-slider img {
   display: block;
   margin: auto;
-  width: 240px;
-  height: auto;
+  width: auto;
+  max-height: 300px;
 }
 
 .image-slider {
   position: relative;
   width: 100%;
+  overflow: hidden; 
 }
 
 .image-slider .navigation {
@@ -288,17 +294,120 @@ header img {
   justify-content: space-between;
 }
 
+.slick-slide {
+  margin-left: 10px; /* Half of 20px because the margin adds up on both sides */
+  margin-right: 10px; /* Half of 20px for the same reason */
+}
+
+.slider-container {
+  position: relative;
+  width: 100%; /* Adjust based on your specific needs */
+}
+
+.each-image {
+  position: relative;
+  padding: 20px; /* This creates the frame around the image */
+  background-color: #007bff1f; /* Blue background simulates the frame */
+  box-shadow: 0 0px 8px rgba(0, 0, 0, 0.5); /* Drop shadow for depth */
+  /* margin: 10px; Additional spacing around the frames */
+}
+
+.each-image img {
+  display: block; /* Ensures the image takes up the whole block */
+  width: calc(100% - 40px); /* Adjusts width to account for padding */
+  height: auto; /* Maintains the aspect ratio of the image */
+  border: none; /* Removes any default border */
+}
+
+.buttons {
+  position: absolute;
+  top: 50%; /* Center vertically */
+  left: 0;
+  right: 0;
+  transform: translateY(-50%); /* Adjust vertical centering */
+  display: flex;
+  justify-content: space-between;
+  width: 100%; /* Ensure it covers the slider */
+  pointer-events: none; /* Allows clicks to pass through when not over buttons */
+  position: absolute;
+  /* padding: 10px; */
+}
+
+.buttons button {
+  pointer-events: auto; /* Ensures buttons are clickable */
+  padding: 150px 100px;
+  background-color: transparent;
+  color: white;
+  font-size: 40px;
+  border: none;
+  cursor: pointer;
+  opacity: 0.25; /* Optional: improves visibility over images */
+  transition: opacity 0.3s ease;
+}
+
+@media (max-width: 250px) {
+  .buttons button {
+      opacity: 0.0; /* Make buttons appear disabled */
+      cursor: not-allowed; /* Change cursor to indicate no action */
+      pointer-events: none; /* Make buttons non-interactive */
+  }
+}
+
+.buttons button:hover {
+  opacity: 1; /* Highlight on hover */
+  background-color: #ffffff0b;
+}
+
+
+.project-header ,.project-role p {
+  width: 100%;
+  display: flex;
+  justify-content: space-between; /* This spreads the child elements across the main axis */
+  align-items: center; /* This ensures they are centered vertically within the div */
+  font-size: 1em; /* Example font size, adjust as needed */
+  background: linear-gradient(150deg, #969ab4, #c4ceee);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: transparent; /* Fallback for non-webkit browsers */
+}
+
+
+@media (max-width: 450px) {
+  .project-header {
+    display:inline; /* Ensures text wraps on smaller screens */
+  }
+}
+
+.project-company, .divider, .project-term {
+  font-size: 1.5em;
+  padding: 0px 20px 0px 0px;
+}
+
+.project-role p {
+  font-size: 1.5em;
+  padding: 0px 0px 0px 0px; /* Adds space between the header and role description */
+}
+
+.project-description {
+  font-size: 2em;
+  max-width: 480px;
+  min-height: 200px;
+  padding: 20px 50px 20px 20px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  margin-left: auto;
+  margin-right: auto;
+
+}
+
 .navigation button.prev,
 .navigation button.next {
-  background: none;
-  border: none;
-  color: white;
   font-size: 24px;
   cursor: pointer;
   height: 100%;
   width: 50%;
-  opacity: 0.5;
-  transition: opacity 0.3s;
+  /* opacity: 0.5; */
+  /* transition: opacity 0.3s; */
 }
 
 .navigation button.prev:hover,
@@ -308,21 +417,12 @@ header img {
 
 .navigation button.prev {
   text-align: left;
-  padding-left: 10px;
+  /* padding-left: 10px; */
 }
 
 .navigation button.next {
   text-align: right;
-  padding-right: 10px;
-}
-
-.slick-slide {
-  margin: 0 15px; /* Adds 15px margin on the left and right of each slide */
-}
-
-/* Adjust the slick list to prevent cutting off the shadow */
-.slick-list {
-  margin: 0 -15px; /* Negate the margin effect on the edges of the slider */
+  /* padding-right: 10px; */
 }
 
 .project-details,

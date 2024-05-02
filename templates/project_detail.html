@@ -14,42 +14,61 @@
             <img src="{{ url_for('static', filename='img-asset/rflogoblack.png') }}" alt="Logo">
         </a>
     </header>
-    {{ images }}
-    <div class="image-slider">
-        {% if images %}
-            {% for image in images %}
-            <div style="position: relative;">
-                <img src="{{ url_for('static', filename=image) }}" alt="Project Image" style="width: 100%;">
-            </div>
-            {% endfor %}
-        
-        {% endif %}
+    {% if images %}
+    <div class="slider-container">
+        <div class="image-slider">
+                {% for image in images %}
+                <div class="each-image">
+                    <img src="{{ url_for('static', filename=image) }}" alt="Project Image">
+                </div>
+                {% endfor %}
+        </div>        
+        <div class="buttons">
+            <button class="slick-prev">‹</button>
+            <button class="slick-next">›</button>
+        </div>
     </div>
-    
-    
+    {% else %}
+        <img src="{{ url_for('static', filename='img-asset/' + project.image) }}" style="padding:50px; height: 50px; width: auto;">
+    {% endif %}
     
     <div class="project_page">
-        <h1>{{ project.id }}</h1>
-        <p>Project Duration: Example Duration</p>
-        <p>Project Position: Example Position</p>
+        <div class="project-header">
+            <span class="project-company">{{ project.company }}</span>
+            <span class="project-term" style="float: right;">{{ project.term }}</span>
+        </div>        
+        <div class="project-role">
+            <p>{{ project.role|safe }}</p>
+        </div>
     </div>
-    <div class="project-role">
-        {{ project.role|safe }}
+    
+    <div class="project-description">
+        {{ project.description |safe }}
     </div>
     <div class="navigation">
         <button onclick="window.history.back();">Previous Project</button>
         <button onclick="window.history.forward();">Next Project</button>
     </div>
     <script>
-    $(document).ready(function(){
-        $('.image-slider').slick({
-            centerMode: true,
-            slidesToShow: 1,
-            arrows: $('.image-slider div').length > 1, // Show arrows only if more than one slide
-            dots: $('.image-slider div').length > 1 // Show dots only if more than one slide
-        });
-    });
+        $(document).ready(function(){
+            function initSlider() {
+                var showArrows = $(window).width() > 450;
+                $('.image-slider').slick({
+                    centerMode: true,
+                    slidesToShow: 1,
+                    arrows: showArrows, // Control arrow display based on width
+                    dots: false,
+                    infinite: true,
+                    variableWidth: true, // This can be set to true to handle variable widths due to margins
+                    adaptiveHeight: true, // This can help if heights are inconsistent
+                    prevArrow: $('.slick-prev'),
+                    nextArrow: $('.slick-next')
+                });
+            }
 
+            initSlider(); // Initialize slider on page load
+            $(window).resize(initSlider); // Re-initialize slider on window resize
+        });
 
     </script>
 </body>
