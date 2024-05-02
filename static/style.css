@@ -7,7 +7,6 @@ body {
   font-optical-sizing: auto;
   font-style: normal;
   font-optical-sizing: auto;
-  background: transparent;
 }
 
 body {
@@ -283,7 +282,7 @@ header img {
   display: block;
   margin: auto;
   width: auto;
-  max-height: 300px;
+  max-height: 200px;
 }
 
 .image-slider {
@@ -292,7 +291,7 @@ header img {
   overflow: hidden; 
 }
 
-.image-slider .navigation {
+.image-slider {
   position: absolute;
   top: 0;
   width: 100%;
@@ -363,7 +362,7 @@ header img {
 
 .buttons button:hover {
   opacity: 1; /* Highlight on hover */
-  background-color: #ffffff0b;
+  background-color: #ffffff64;
 }
 
 
@@ -400,16 +399,19 @@ header img {
   margin-right: auto;
 }
 
-.project-details,
 .navigation {
   text-align: center;
   margin: 20px;
+}
+.navigation a {
+  color: transparent;
+  text-decoration: none; ;
 }
 
 .navigation img {
   min-width: 100px;
   padding: 10px 20px;
-  margin: 5px 50px;
+  margin: 5px 50px 50px 50px;
   background-color: #007bff14;
   cursor: pointer;
   height: 20px; 
@@ -420,7 +422,7 @@ header img {
 
 footer {
   grid-column: 1 / -1; /* Full width */
-  background-color: #005a9c;
+  /* background-color: #005a9c; */
 
   padding: 10px;
   text-align: center;
