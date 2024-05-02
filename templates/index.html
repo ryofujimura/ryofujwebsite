@@ -11,16 +11,16 @@
 <body>
     <div class="container" >
         <header>
-            <a href="#" class="">
+            <a href="{{ url_for('home') }}">
                 <img src="{{ url_for('static', filename='img-asset/rflogoblack.png') }}" alt="Logo">
             </a>
-        </header>        
+        </header>    
         <img src="{{ url_for('static', filename='img-asset/big-image.png') }}" alt="Profile Image" class="profile-image">
         <div class="profile">
-            <div class="description description1 gradient-text">
+            <div class="role role1 gradient-text">
                 <p>Data Engineer</p>
             </div>
-            <div class="description description2 gradient-text">
+            <div class="role role2 gradient-text">
                 <p>Ryo Fujimura</p>
             </div>
             
@@ -44,9 +44,9 @@
                     <span class="project-title">{{ project.title }}</span>
                     <img src="{{ url_for('static', filename='img-asset/'+project.image) }}" alt="Project Icon" class="project-icon">
                 </div>
-                <div class="project-description">
+                <div class="project-role">
                     <p>
-                        {{ project.description|safe }}
+                        {{ project.role|safe }}
                     </p>
                 </div>
             </a>
