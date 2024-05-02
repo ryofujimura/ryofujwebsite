@@ -158,19 +158,19 @@ header img {
 }
 
 /* Hover effects for each icon triggered by hovering the hyperlink */
-.hyperlink:hover .github-icon {
+.hyperlink:hover .Github-icon {
   filter: none;
   fill: #6e5494; /* Purple for GitHub */
   color: #add8e6; /* Light grey background on hover */
   transition: background-color 0.3s;
 }
 
-.hyperlink:hover .linkedin-icon {
+.hyperlink:hover .LinkedIn-icon {
   filter: none;
   fill: #0a66c2; /* Blue for LinkedIn */
 }
 
-.hyperlink:hover .resume-icon {
+.hyperlink:hover .Resume-icon {
   filter: none;
   fill: #000000; /* Black for Resume */
 }
@@ -195,15 +195,17 @@ header img {
   grid-template-columns: 2fr 5fr; /* Column setup with a 2:5 ratio */
   align-items: start; /* Aligns items to the top */
   gap: 20px; /* Space between the icon/title area and the description */
-  padding: 20px;
+  /* padding: 20px; */
   /* background-color: #f0f0f0; Light grey background */
   margin: 10px; /* Space between individual projects */
-  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 0px 10px #00154741;
   text-decoration: none; /* Removes underline from links */
   color: inherit; /* Ensures text color inherits from the parent */
   max-width: 500px;
   margin-left: auto;
   margin-right: auto;
+  color: #919191; 
+  max-height: 110px;
 }
 
 .project-icon-title {
@@ -211,21 +213,39 @@ header img {
   flex-direction: column; /* Stacks children vertically */
   align-items: center; /* Centers children horizontally */
   justify-content: center; /* Centers children vertically */
-}
-
-.project-icon {
-  margin-top: 10px; /* Space between the title and the icon */
+  padding: 20px 20px;
+  min-width: 120px;
+  box-shadow:5px 0 5px -2px #00154741;
+  /* box-shadow:  5px 0 5px -2px rgba(0, 0, 0, 0.061); */
 }
 
 .project-title {
   font-size: 1.2em;
   font-weight: bold;
+  /* min-width: 80px; */
+  padding: 5px 15px;
+  border-radius: 30px;
+  box-shadow: inset 0 0 5px rgba(88, 108, 138, 0.108), inset 0 0 5px rgba(145, 145, 145, 0.111);
+  display: flex;        /* Makes the .project-title a flex container */
+  justify-content: center; /* Horizontally centers the content */
+  align-items: center;     /* Vertically centers the content */
+  text-align: center;      /* Ensures text alignment is centered if it wraps */
+          /* Set a fixed height to aid vertical centering */
+}
+
+.project-icon {
+  margin: 10px; /* Space between the title and the icon */
+  width: 100px; /* Set width, and height will scale automatically */
+  max-height: 21px; /* Maintains the aspect ratio */
 }
 
 .project-description {
   text-align: left;
-  font-size: 1.3em;
+  font-size: 2em;
   font-weight: bold;
+  margin-left: 20px;
+  margin-top: auto;
+  margin-bottom: auto;
 }
 
 .project-indicator {
@@ -243,6 +263,38 @@ header img {
   /* Styles for the logo */
   width: 100px; /* Adjust based on actual logo dimensions */
   grid-row: 1 / span 2; /* Span across two rows */
+}
+
+
+
+.image-slider img {
+    display: block;
+    margin: auto;
+    width: 240px;
+    height: auto;
+}
+
+.slick-slide {
+  margin: 0 15px; /* Adds 15px margin on the left and right of each slide */
+}
+
+/* Adjust the slick list to prevent cutting off the shadow */
+.slick-list {
+  margin: 0 -15px; /* Negate the margin effect on the edges of the slider */
+}
+
+.project-details, .navigation {
+    text-align: center;
+    margin: 20px;
+}
+
+.navigation button {
+    padding: 10px 20px;
+    margin: 5px;
+    background-color: #007BFF;
+    color: white;
+    border: none;
+    cursor: pointer;
 }
 
 footer {

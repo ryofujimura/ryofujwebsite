@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{{ project.title }} - Details</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.css">
+</head>
+<body>
+    <header>
+        <img src="{{ url_for('static', filename='img-asset/rflogoblack.png') }}" alt="Company Logo" style="height: 50px; width: auto;">
+    </header>
+    
+    <div class="image-slider">
+        {% for image in images %}
+        <div style="position: relative;">
+            <img src="{{ url_for('static', filename=image) }}" alt="Project Image" style="width: 100%; box-shadow: 5px 0 5px -2px #00154741;">
+            <img src="{{ url_for('static', filename='img-asset/cusco.svg') }}" alt="Icon" style="position: absolute; right: 10px; bottom: 10px; width: 30px; height: 30px;">
+        </div>
+        {% endfor %}
+    </div>
+    <div class="project_page">
+        <h1>{{ project.title }}</h1>
+        <p>Project Duration: Example Duration</p>
+        <p>Project Position: Example Position</p>
+    </div>
+    <div class="project-description">
+        {{ project.description|safe }}
+    </div>
+    <div class="navigation">
+        <button onclick="window.history.back();">Previous Project</button>
+        <button onclick="window.history.forward();">Next Project</button>
+    </div>
+    <script>
+    $(document).ready(function(){
+        $('.image-slider').slick({
+            centerMode: true,
+            slidesToShow: 1,
+            arrows: true,
+            dots: true
+        });
+    });
+    </script>
+</body>
+</html>
