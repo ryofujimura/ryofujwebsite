@@ -1,1 +1,2 @@
-Flask==2.3.3
+Flask==2.0.1
+gunicorn==20.0.4  # If you are deploying to a production environment that uses Gunicorn
