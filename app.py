@@ -26,12 +26,23 @@ def home():
 def project_page(project_id):
     project = next((p for p in projects if p['id'] == project_id), None)
     if project:
-        # Construct paths and check if they exist
-        base_path = app.static_folder  # Typically, this is your 'static' directory
-        image_paths = [f"img-assets/{project['id']}_{i}.jpg" for i in range(1, 4)]
-        # Filter list to include only existing files
-        image_paths = [img for img in image_paths if os.path.exists(os.path.join(base_path, img))]
-        return render_template('project_detail.html', project=project, images=image_paths)
+        current_index = projects.index(project)
+        prev_index = current_index - 1 if current_index > 0 else len(projects) - 1
+        next_index = current_index + 1 if current_index < len(projects) - 1 else 0
+        # Generate image paths and check if they exist
+        base_path = app.static_folder  # Typically points to your 'static' directory
+        image_paths = []
+        for i in range(1, 4):
+            img_path = f"img-asset/{project['id']}_{i}.jpg"
+            full_path = os.path.join(base_path, img_path)
+            if os.path.exists(full_path):
+                image_paths.append(img_path)
+
+        return render_template('project_detail.html', project=project, images=image_paths,
+                               prev_project=url_for('project_page', project_id=projects[prev_index]['id']),
+                               next_project=url_for('project_page', project_id=projects[next_index]['id']),
+                               prev_title=projects[prev_index]['image'],
+                               next_title=projects[next_index]['image'])
     else:
         abort(404)
 

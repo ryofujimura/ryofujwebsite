@@ -14,6 +14,7 @@
             <img src="{{ url_for('static', filename='img-asset/rflogoblack.png') }}" alt="Logo">
         </a>
     </header>
+    <img src="{{ url_for('static', filename='img-asset/' + project.image) }}" style="padding:50px; height: 50px; width: auto;">
     {% if images %}
     <div class="slider-container">
         <div class="image-slider">
@@ -27,9 +28,7 @@
             <button class="slick-prev">‹</button>
             <button class="slick-next">›</button>
         </div>
-    </div>
-    {% else %}
-        <img src="{{ url_for('static', filename='img-asset/' + project.image) }}" style="padding:50px; height: 50px; width: auto;">
+    </div>        
     {% endif %}
     
     <div class="project_page">
@@ -46,9 +45,14 @@
         {{ project.description |safe }}
     </div>
     <div class="navigation">
-        <button onclick="window.history.back();">Previous Project</button>
-        <button onclick="window.history.forward();">Next Project</button>
+        <a href="{{ prev_project }}">
+            <img src="{{ url_for('static', filename='/img-asset/'+prev_title) }}" alt="Previous Project">
+        </a>
+        <a href="{{ next_project }}">
+            <img src="{{ url_for('static', filename='/img-asset/'+next_title) }}" alt="Next Project">
+        </a>
     </div>
+    
     <script>
         $(document).ready(function(){
             function initSlider() {
