@@ -51,6 +51,12 @@ header {
   margin: 0 auto;
 }
 
+#featured-skills {
+  display: flex;
+  width: 20px;
+  height: auto;
+}
+
 #links {
   padding: 20px;
   background-color: #f0f0f0; /* Adjust as needed */
