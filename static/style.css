@@ -3,21 +3,30 @@ body {
   font-family: Arial, sans-serif;
   margin: 0;
   padding: 0;
-}
-
-header {
-  background-color: #f0f0f0;
-  padding: 20px;
-  text-align: center;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh; /* Ensure the body takes up the full height of the viewport */
 }
 
 #profile {
-  height: 100vh;
-  background-color: #f0f0f0; /* You can adjust the background color as needed */
+  height: 100vh; /* Make the profile section take up the entire vertical space of the screen */
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  background-color: #f0f0f0;
+}
+
+header {
+  padding: 20px;
+  text-align: center;
+}
+
+#profile img {
+  max-width: 300px; /* Set max-width for medium size */
+  width: 100%; /* Ensure image fills its container */
+  height: auto; /* Maintain aspect ratio */
+  margin-bottom: 20px; /* Adjust as needed */
 }
 
 #profile h1,

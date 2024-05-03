@@ -11,9 +11,24 @@
 <body>
     <div id="profile">
         <header>
+            <img src="{{ url_for('static', filename='img-asset/profile.png') }}" alt="Profile Picture">
             <h1>{{ name }}</h1>
             <h2>{{ title }}</h2>
             <p>{{ description }}</p>
+            <div id="featured-skills">
+                {% set skill_found = false %}
+                {% for skill in featured_skills %}
+                    {% if not skill_found %}
+                        {% for ext in available_images %}
+                            {% if skill + '.' + ext in available_images %}
+                                <img src="{{ url_for('static', filename='img-asset/' + skill + '.' + ext) }}" alt="{{ skill }}">
+                                {% set skill_found = true %}
+                            {% endif %}
+                        {% endfor %}
+                    {% endif %}
+                {% endfor %}
+            </div>
+            
         </header>
     </div>
 

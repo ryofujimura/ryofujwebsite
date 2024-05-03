@@ -1,11 +1,13 @@
 from flask import Flask, render_template
+import os
 
 app = Flask(__name__)
 
-
+# Define data
 name = "Ryo Fujimura"
 title = "Software Engineer"
 description = "I am a data scientist with experience in data management, analysis, and visualization. I am passionate about using data to drive business decisions and solve complex problems."
+featured_skills = ["swift", "database", "python"]
 
 
 projects = [
@@ -66,10 +68,16 @@ links = [
     },
 ]
 
+featured_skills = ["swift", "database", "python"]
 
+# Get available images with their extensions
+img_asset_path = os.path.join(app.static_folder, 'img-asset')
+available_images = [filename.split('.')[1] for filename in os.listdir(img_asset_path)]
+
+# Define routes
 @app.route('/')
 def index():
-    return render_template('index.html', name=name, title=title, description=description, projects=projects, links=links)
+    return render_template('index.html', name=name, title=title, description=description, projects=projects, links=links, featured_skills=featured_skills, available_images=available_images)
 
 if __name__ == '__main__':
     app.run(debug=True)
