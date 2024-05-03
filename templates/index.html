@@ -1,57 +1,49 @@
 <!DOCTYPE html>
-<html>
-<head>
-    <title>Ryo Fujimura Portfolio</title>
-    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }} ">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Trispace:wght@100..800&display=swap" rel="stylesheet">
+<html lang="en">
 
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio - Ryo Fujimura</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
 </head>
+
 <body>
-    <div class="container" >
+    <div id="profile">
         <header>
-            <a href="{{ url_for('home') }}">
-                <img src="{{ url_for('static', filename='img-asset/ryologo.svg') }}" alt="Logo">
-            </a>
-        </header>    
-        <img src="{{ url_for('static', filename='img-asset/big-image.png') }}" alt="Profile Image" class="profile-image">
-        <div class="profile">
-            <div class="role role1 gradient-text">
-                <p>Data Engineer</p>
-            </div>
-            <div class="role role2 gradient-text">
-                <p>Ryo Fujimura</p>
-            </div>
-            
-            <div class="hyperlink-container">
-                <!-- Repeat for hyperlink -->
-                {% for hyperlink in hyperlink %}
-                <a href="{{ hyperlink.url }}" class="hyperlink">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" class="hyperlink-image {{ hyperlink.title }}-icon">
-                        <path d="{{ hyperlink.icon }}"/>
-                    </svg>
-                    {{ hyperlink.title }}
-                </a>
-                {% endfor %}   
-            </div>
-        </div>
-        <div class="projects-container">
-            <!-- Repeat for other projects -->
-            {% for project in projects %}
-            <a href="/projects/{{ project.id }}" class="project">
-                <div class="project-icon-title">
-                    <span class="project-title">{{ project.title }}</span>
-                    <img src="{{ url_for('static', filename='img-asset/'+project.image) }}" alt="Project Icon" class="project-icon">
-                </div>
-                <div class="project-role">
-                    <p>
-                        {{ project.role|safe }}
-                    </p>
-                </div>
-            </a>
-            {% endfor %}
-        </div> 
+            <h1>{{ name }}</h1>
+            <h2>{{ title }}</h2>
+            <p>{{ description }}</p>
+        </header>
     </div>
+
+    <section id="experience">
+        <h2>Experience</h2>
+        <div id="experience-list">
+            {% for project in projects %}
+            <div class="project">
+                <img src="{{ url_for('static', filename='img-asset/' + project['image']) }}" alt="{{ project['company'] }}">
+                <h3>{{ project['company'] }}</h3>
+                <p>{{ project['term'] }}</p>
+                <p><strong>{{ project['role'] }}</strong></p>
+                <p>{{ project['description'] }}</p>
+            </div>
+            {% endfor %}
+        </div>
+    </section>
+
+    <section id="links">
+        <h2>Links</h2>
+        <ul>
+            {% for link in links %}
+            <li><a href="{{ link['url'] }}"><img src="{{ url_for('static', filename='img-asset/' + link['icon']) }}" alt="{{ link['title'] }}">{{ link['title'] }}</a></li>
+            {% endfor %}
+        </ul>
+    </section>
+
+    <div id="footer"></div>
+
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
 </body>
+
 </html>
