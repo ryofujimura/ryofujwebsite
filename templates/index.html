@@ -1,66 +1,100 @@
 <!DOCTYPE html>
 <html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Portfolio - Ryo Fujimura</title>
+        <!-- <link rel="preconnect" href="https://fonts.googleapis.com"> -->
+        <!-- <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin> -->
+        <link
+            href="https://fonts.googleapis.com/css2?family=MuseoModerno:ital,wght@0,100..900;1,100..900&display=swap"
+            rel="stylesheet"
+        />
+        <link
+            rel="stylesheet"
+            href="{{ url_for('static', filename='style.css') }}"
+        />
+    </head>
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portfolio - Ryo Fujimura</title>
-    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
-</head>
+    <body>
+        <div class="background"></div>
+        <div class="background-grid"></div>
 
-<body>
-    <div id="profile">
-        <header>
-            <img src="{{ url_for('static', filename='img-asset/profile.png') }}" alt="Profile Picture">
-            <h1>{{ name }}</h1>
-            <h2>{{ title }}</h2>
-            <p>{{ description }}</p>
-            <div id="featured-skills">
-                {% for skill in featured_skills %}
-                    {% set image_path = 'img-asset/' + skill + '.svg' %}
-                    {% if image_path in available_images %}
-                        <img src="{{ url_for('static', filename=image_path) }}" alt="{{ skill }}">
-                    {% endif %}
-                    {% set image_path = 'img-asset/' + skill + '.png' %}
-                    {% if image_path in available_images %}
-                        <img src="{{ url_for('static', filename=image_path) }}" alt="{{ skill }}">
-                    {% endif %}
-                    {% set image_path = 'img-asset/' + skill + '.jpg' %}
-                    {% if image_path in available_images %}
-                        <img src="{{ url_for('static', filename=image_path) }}" alt="{{ skill }}">
-                    {% endif %}
-                {% endfor %}
-            </div>           
-        </header>
-    </div>
-
-    <section id="experience">
-        <h2>Experience</h2>
-        <div id="experience-list">
-            {% for project in projects %}
-            <div class="project">
-                <img src="{{ url_for('static', filename='img-asset/' + project['image']) }}" alt="{{ project['company'] }}">
-                <h3>{{ project['company'] }}</h3>
-                <p>{{ project['term'] }}</p>
-                <p><strong>{{ project['role'] }}</strong></p>
-                <p>{{ project['description'] }}</p>
+        <div id="content">
+            <div class="profile">
+                <div class="bottom-half-background"></div>
+                <header>
+                    <img
+                        src="{{ url_for('static', filename='img-asset/profile.png') }}"
+                        alt="Profile Picture"
+                    />
+                    <div id="sticky-text">
+                        <h1>{{ name }}</h1>
+                        <h2>{{ title }}</h2>
+                    </div>
+                    <p>{{ description }}</p>
+                    <div id="featured-skills">
+                        {% for skill in featured_skills %} {% set image_path =
+                        'img-asset/' + skill + '.svg' %} {% if image_path in
+                        available_images %}
+                        <img
+                            src="{{ url_for('static', filename=image_path) }}"
+                            alt="{{ skill }}"
+                        />
+                        {% endif %} {% set image_path = 'img-asset/' + skill +
+                        '.png' %} {% if image_path in available_images %}
+                        <img
+                            src="{{ url_for('static', filename=image_path) }}"
+                            alt="{{ skill }}"
+                        />
+                        {% endif %} {% set image_path = 'img-asset/' + skill +
+                        '.jpg' %} {% if image_path in available_images %}
+                        <img
+                            src="{{ url_for('static', filename=image_path) }}"
+                            alt="{{ skill }}"
+                        />
+                        {% endif %} {% endfor %}
+                    </div>
+                </header>
             </div>
-            {% endfor %}
+
+            <section id="experience">
+                <h2>Experience</h2>
+                <div id="experience-list">
+                    {% for project in projects %}
+                    <div class="project">
+                        <img
+                            src="{{ url_for('static', filename='img-asset/' + project['image']) }}"
+                            alt="{{ project['company'] }}"
+                        />
+                        <h3>{{ project['company'] }}</h3>
+                        <p>{{ project['term'] }}</p>
+                        <p><strong>{{ project['role'] }}</strong></p>
+                        <p>{{ project['description'] }}</p>
+                    </div>
+                    {% endfor %}
+                </div>
+            </section>
+
+            <section id="links">
+                <h2>Links</h2>
+                <ul>
+                    {% for link in links %}
+                    <li>
+                        <a href="{{ link['url'] }}"
+                            ><img
+                                src="{{ url_for('static', filename='img-asset/' + link['icon']) }}"
+                                alt="{{ link['title'] }}"
+                            />{{ link['title'] }}</a
+                        >
+                    </li>
+                    {% endfor %}
+                </ul>
+            </section>
+
+            <div id="footer"></div>
+
+            <script src="{{ url_for('static', filename='script.js') }}"></script>
         </div>
-    </section>
-
-    <section id="links">
-        <h2>Links</h2>
-        <ul>
-            {% for link in links %}
-            <li><a href="{{ link['url'] }}"><img src="{{ url_for('static', filename='img-asset/' + link['icon']) }}" alt="{{ link['title'] }}">{{ link['title'] }}</a></li>
-            {% endfor %}
-        </ul>
-    </section>
-
-    <div id="footer"></div>
-
-    <script src="{{ url_for('static', filename='script.js') }}"></script>
-</body>
-
+    </body>
 </html>
