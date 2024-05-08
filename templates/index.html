@@ -18,47 +18,57 @@
 
     <body>
         <div class="background"></div>
-        <div class="background-grid"></div>
+        <div class="background-grid-profile"></div>
+        <header>
+            <nav>
+                <a href="#content">
+                    <img
+                        src="{{ url_for('static', filename='img-asset/rflogoblack.png') }}"
+                        alt="Home"
+                    />
+                </a>
+                <!-- <a href="#experience">Experience</a> -->
+                <!-- <a href="#links">Links</a> -->
+            </nav>
+        </header>
 
         <div id="content">
             <div class="profile">
                 <div class="bottom-half-background"></div>
-                <header>
+                <div class="gradient-circle"></div>
+                <img
+                    src="{{ url_for('static', filename='img-asset/profile.png') }}"
+                    alt="Profile Picture"
+                />
+                <h1>{{ name }}</h1>
+                <h2>{{ title }}</h2>
+                <p>{{ description }}</p>
+                <div id="featured-skills">
+                    {% for skill in featured_skills %} {% set image_path =
+                    'img-asset/' + skill + '.svg' %} {% if image_path in
+                    available_images %}
                     <img
-                        src="{{ url_for('static', filename='img-asset/profile.png') }}"
-                        alt="Profile Picture"
+                        src="{{ url_for('static', filename=image_path) }}"
+                        alt="{{ skill }}"
                     />
-                    <div id="sticky-text">
-                        <h1>{{ name }}</h1>
-                        <h2>{{ title }}</h2>
-                    </div>
-                    <p>{{ description }}</p>
-                    <div id="featured-skills">
-                        {% for skill in featured_skills %} {% set image_path =
-                        'img-asset/' + skill + '.svg' %} {% if image_path in
-                        available_images %}
-                        <img
-                            src="{{ url_for('static', filename=image_path) }}"
-                            alt="{{ skill }}"
-                        />
-                        {% endif %} {% set image_path = 'img-asset/' + skill +
-                        '.png' %} {% if image_path in available_images %}
-                        <img
-                            src="{{ url_for('static', filename=image_path) }}"
-                            alt="{{ skill }}"
-                        />
-                        {% endif %} {% set image_path = 'img-asset/' + skill +
-                        '.jpg' %} {% if image_path in available_images %}
-                        <img
-                            src="{{ url_for('static', filename=image_path) }}"
-                            alt="{{ skill }}"
-                        />
-                        {% endif %} {% endfor %}
-                    </div>
-                </header>
+                    {% endif %} {% set image_path = 'img-asset/' + skill +
+                    '.png' %} {% if image_path in available_images %}
+                    <img
+                        src="{{ url_for('static', filename=image_path) }}"
+                        alt="{{ skill }}"
+                    />
+                    {% endif %} {% set image_path = 'img-asset/' + skill +
+                    '.jpg' %} {% if image_path in available_images %}
+                    <img
+                        src="{{ url_for('static', filename=image_path) }}"
+                        alt="{{ skill }}"
+                    />
+                    {% endif %} {% endfor %}
+                </div>
             </div>
 
             <section id="experience">
+                <div class="background-grid-experience"></div>
                 <h2>Experience</h2>
                 <div id="experience-list">
                     {% for project in projects %}
