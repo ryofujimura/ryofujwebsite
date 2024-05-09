@@ -167,7 +167,7 @@ header img {
     border-radius: 50%;
     position: absolute;
     left: calc(50% + 150px);
-    top: 43%;
+    top: 51%;
     left: 45%;
     transform: translateY(-50%);
     display: flex;
@@ -205,13 +205,13 @@ header img {
     position: absolute;
     text-align: left;
     left: 150px;
-    top: 130px;
-    transform: rotate(10deg);
+    top: 100px;
+    transform: rotate(5deg);
 }
 
 .title-outline,
 .title-no-outline {
-    font-size: 1.3em;
+    font-size: 2em;
     color: #605c75;
 }
 
@@ -223,7 +223,8 @@ header img {
 }
 
 .title-no-outline {
-    line-height: 1.2;
+    line-height: 1.1;
+    font-weight: 600;
     position: absolute;
     top: 0;
     left: 0;
@@ -239,8 +240,9 @@ header img {
 .name-wrapper {
     position: relative;
     display: inline-block;
-    
-
+    left: -310px;
+    top: -60px;
+    font-size: 1.5em;
 }
 
 .name-outline, .name-no-outline {
@@ -252,15 +254,25 @@ header img {
 }
 
 .name-outline {
-    line-height: 1;
+    line-height: 1.2;
     -webkit-text-fill-color: #605c75;
-    -webkit-text-stroke: 8px white;
+    -webkit-text-stroke: 12px white;
 }
 
 /* The plain overlay text */
 .name-no-outline {
-    line-height: 1;
+    line-height: 1.2;
     -webkit-text-stroke: 0;
+}
+
+.welcome-wrapper {
+    position: relative;
+    display: inline-block;
+    /* left: -0px; */
+    top: 15vh;
+    font-size: 1.5em;
+    font-weight: 600;
+    letter-spacing: 0.32em;
 }
 
 #experience {
