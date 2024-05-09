@@ -6,7 +6,7 @@ app = Flask(__name__)
 # Define data
 first_name = "RYO"
 last_name = "FUJIMURA"
-title = "Software Engineer"
+title = "DATA<br>ENGINEER"
 description = "I am a data scientist with experience in data management, analysis, and visualization. I am passionate about using data to drive business decisions and solve complex problems."
 featured_skills = ["swift", "database", "python"]
 

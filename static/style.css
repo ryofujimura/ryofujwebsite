@@ -131,8 +131,9 @@ header a {
 }
 
 header a:hover {
-    background-color: #ddd;
-    color: black;
+    /* background-color: #ddd; */
+    /* color: black; */
+    pointer-events: none;
 }
 
 header img {
@@ -160,14 +161,14 @@ header img {
 
 .gradient-circle {
     z-index: -2;
-    width: 330px;
-    height: 330px;
+    width: 340px;
+    height: 340px;
     background: linear-gradient(215deg, #9f9ab8, #605c75);
     border-radius: 50%;
     position: absolute;
     left: calc(50% + 150px);
-    top: 45%;
-    left: 50%;
+    top: 43%;
+    left: 45%;
     transform: translateY(-50%);
     display: flex;
     justify-content: center;
@@ -200,28 +201,29 @@ header img {
     /* margin-bottom: 20px;  */
 }
 
-.text-container {
-    position: relative;
-    display: inline-block;
+.title-wrapper {
+    position: absolute;
+    text-align: left;
+    left: 150px;
+    top: 130px;
+    transform: rotate(10deg);
 }
 
-.outlined-text,
-.no-outline-text {
-    font-size: 180px;
-    font-family: "dT Jakob Variable Concept Regular", sans-serif;
-    font-variation-settings: "wght" 40;
-    font-feature-settings: "calt" 0, "liga" 0;
-    color: purple;
+.title-outline,
+.title-no-outline {
+    font-size: 1.3em;
+    color: #605c75;
 }
 
-.outlined-text {
-    -webkit-text-stroke: 4px white;
-    -webkit-text-fill-color: purple;
-    text-shadow: 2px 2px 0px white, -2px -2px 0px white, 2px -2px 0px white,
-        -2px 2px 0px white;
+.title-outline {
+    line-height: 1;
+    -webkit-text-fill-color: #605c75;
+    -webkit-text-stroke: 13px white;
+    top: 0;
 }
 
-.no-outline-text {
+.title-no-outline {
+    line-height: 1.2;
     position: absolute;
     top: 0;
     left: 0;
@@ -234,12 +236,31 @@ header img {
     margin: 0px;
 }
 
-.name {
-    font-size: 2em;
-    text-shadow: -4px -4px 0 #ffffff, 4px -4px 0 #ffffff, -4px 4px 0 #ffffff,
-        4px 4px 0 #ffffff;
-    color: #605c75;
-    -webkit-text-stroke: 4px #ffffff;
+.name-wrapper {
+    position: relative;
+    display: inline-block;
+    
+
+}
+
+.name-outline, .name-no-outline {
+    position: absolute;
+    text-align: left;
+    letter-spacing: 0.32em;
+    font-weight: 800;
+    font-size: 3em;
+}
+
+.name-outline {
+    line-height: 1;
+    -webkit-text-fill-color: #605c75;
+    -webkit-text-stroke: 8px white;
+}
+
+/* The plain overlay text */
+.name-no-outline {
+    line-height: 1;
+    -webkit-text-stroke: 0;
 }
 
 #experience {
