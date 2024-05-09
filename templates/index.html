@@ -35,36 +35,43 @@
         <div id="content">
             <div class="profile">
                 <div class="bottom-half-background"></div>
-                <div class="gradient-circle"></div>
                 <img
                     src="{{ url_for('static', filename='img-asset/profile.png') }}"
                     alt="Profile Picture"
+                    class="profile-img"
                 />
-                <h1>{{ name }}</h1>
+                <div class="gradient-circle">
+                    <div
+                        class="icon-wrapper"
+                        style="left: 260px; top: -100px; width: 80px; height: 80px; transform: rotate(15deg);">
+                        <img
+                            src="{{ url_for('static', filename='img-asset/python.png') }}"
+                            alt="Profile Picture"
+                        />
+                    </div>
+                    <div class="icon-wrapper" 
+                         style="left: 160px; top: -35px; width: 70px; height: 70px; transform: rotate(-5deg);"">
+                        <img
+                            src="{{ url_for('static', filename='img-asset/swift.png') }}"
+                            alt="Profile Picture"
+                        />
+                    </div>
+                    <div class="icon-wrapper" 
+                         style="left: 300px; top: 80px; width: 50px; height: 50px; transform: rotate(5deg);"">
+                        <img
+                            src="{{ url_for('static', filename='img-asset/swift.png') }}"
+                            alt="Profile Picture"
+                        />
+                    </div>
+                   
+                </div>
+
+                <div class="name">
+                    <h1>{{ first_name }}</h1>
+                    <h1>{{ last_name }}</h1>
+                </div>
                 <h2>{{ title }}</h2>
                 <p>{{ description }}</p>
-                <div id="featured-skills">
-                    {% for skill in featured_skills %} {% set image_path =
-                    'img-asset/' + skill + '.svg' %} {% if image_path in
-                    available_images %}
-                    <img
-                        src="{{ url_for('static', filename=image_path) }}"
-                        alt="{{ skill }}"
-                    />
-                    {% endif %} {% set image_path = 'img-asset/' + skill +
-                    '.png' %} {% if image_path in available_images %}
-                    <img
-                        src="{{ url_for('static', filename=image_path) }}"
-                        alt="{{ skill }}"
-                    />
-                    {% endif %} {% set image_path = 'img-asset/' + skill +
-                    '.jpg' %} {% if image_path in available_images %}
-                    <img
-                        src="{{ url_for('static', filename=image_path) }}"
-                        alt="{{ skill }}"
-                    />
-                    {% endif %} {% endfor %}
-                </div>
             </div>
 
             <section id="experience">
@@ -79,8 +86,8 @@
                         />
                         <h3>{{ project['company'] }}</h3>
                         <p>{{ project['term'] }}</p>
-                        <p><strong>{{ project['role'] }}</strong></p>
-                        <p>{{ project['description'] }}</p>
+                        <p><strong>{{ project['role'] | safe }}</strong></p>
+                        <p>{{ project['description'] | safe }}</p>
                     </div>
                     {% endfor %}
                 </div>

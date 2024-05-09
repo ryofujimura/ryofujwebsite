@@ -4,7 +4,8 @@ import os
 app = Flask(__name__)
 
 # Define data
-name = "RYO FUJIMURA"
+first_name = "RYO"
+last_name = "FUJIMURA"
 title = "Software Engineer"
 description = "I am a data scientist with experience in data management, analysis, and visualization. I am passionate about using data to drive business decisions and solve complex problems."
 featured_skills = ["swift", "database", "python"]
@@ -68,16 +69,11 @@ links = [
     },
 ]
 
-featured_skills = ["swift", "database", "python"]
 
 # Get available images with their extensions
 img_asset_path = os.path.join(app.static_folder, "img-asset")
 # for each file in the img_asset_path, add "img-asset/" in front
-available_images = [
-    f"img-asset/{f}"
-    for f in os.listdir(img_asset_path)
-    if os.path.isfile(os.path.join(img_asset_path, f))
-]
+
 
 
 # print(available_images)
@@ -86,13 +82,12 @@ available_images = [
 def index():
     return render_template(
         "index.html",
-        name=name,
+        first_name=first_name,
+        last_name=last_name,
         title=title,
         description=description,
         projects=projects,
         links=links,
-        featured_skills=featured_skills,
-        available_images=available_images,
     )
 
 

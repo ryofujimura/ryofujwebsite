@@ -32,53 +32,67 @@ museomoderno-font {
 }
 
 .background-grid-profile {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  z-index: -3;
-  background-size: 80px 80px;
-  background-image: linear-gradient(to right, rgb(50, 50, 50) 1px, transparent 1px),
-                    linear-gradient(to bottom, rgb(50, 50, 50) 1px, transparent 1px);
-  overflow: hidden;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -3;
+    background-size: 80px 80px;
+    background-image: linear-gradient(
+            to right,
+            rgb(50, 50, 50) 1px,
+            transparent 1px
+        ),
+        linear-gradient(to bottom, rgb(50, 50, 50) 1px, transparent 1px);
+    overflow: hidden;
 }
 
 .background-grid-profile::after {
-  content: "";
-  z-index: -3;
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  background: linear-gradient(to bottom, rgb(255, 255, 255), rgba(255, 255, 255, 0)),
-              linear-gradient(to right, rgb(255, 255, 255), rgba(255, 255, 255, 0)),
-              linear-gradient(to left, rgb(255, 255, 255), rgba(255, 255, 255, 0));
+    content: "";
+    z-index: -3;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(
+            to bottom,
+            rgb(255, 255, 255),
+            rgba(255, 255, 255, 0)
+        ),
+        linear-gradient(to right, rgb(255, 255, 255), rgba(255, 255, 255, 0)),
+        linear-gradient(to left, rgb(255, 255, 255), rgba(255, 255, 255, 0));
 }
 
 .background-grid-experience {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  z-index: -3;
-  background-size: 80px 80px;
-  background-image: linear-gradient(to right, rgb(50, 50, 50) 1px, transparent 1px),
-                    linear-gradient(to bottom, rgb(50, 50, 50) 1px, transparent 1px);
-  overflow: hidden;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -3;
+    background-size: 80px 80px;
+    background-image: linear-gradient(
+            to right,
+            rgb(50, 50, 50) 1px,
+            transparent 1px
+        ),
+        linear-gradient(to bottom, rgb(50, 50, 50) 1px, transparent 1px);
+    overflow: hidden;
 }
 
 .background-grid-experience::after {
-  content: "";
-  z-index: -3;
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  background: linear-gradient(to right, rgb(255, 255, 255), rgba(255, 255, 255, 0)),
-              linear-gradient(to left, rgb(255, 255, 255), rgba(255, 255, 255, 0));
+    content: "";
+    z-index: -3;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(
+            to right,
+            rgb(255, 255, 255),
+            rgba(255, 255, 255, 0)
+        ),
+        linear-gradient(to left, rgb(255, 255, 255), rgba(255, 255, 255, 0));
 }
-
-
 
 body {
     font-family: "MuseoModerno", Arial, sans-serif;
@@ -87,19 +101,24 @@ body {
     display: flex;
     flex-direction: column;
     min-height: 100vh;
+    color: #605c75;
 }
 
 header {
     position: sticky;
     text-align: center;
-    z-index: 1000;
+    z-index: 10;
 }
 
 header nav {
     position: fixed; /* Makes the navbar stay in place when scrolling */
     top: 0;
     width: 100%;
-    background: linear-gradient(to bottom, rgba(255, 255, 255, 1) 0%, rgba(255, 255, 255, 0) 100%);
+    background: linear-gradient(
+        to bottom,
+        rgba(255, 255, 255, 1) 0%,
+        rgba(255, 255, 255, 0) 100%
+    );
     overflow: hidden;
 }
 
@@ -132,36 +151,102 @@ header img {
     text-align: center;
 }
 
-.gradient-circle {
-    max-width: 330px;
-    width: 100%;
-    aspect-ratio: 1/1;
-    border-radius: 50%;
-    background: linear-gradient(215deg, #9F9AB8, #605C75);
+.background-profile {
+    z-index: -2;
     position: absolute;
-    z-index: -1; 
-    top: 40%;
-    left: 70%;
-    transform: translate(-50%, -50%);
+    width: 100%;
+    /* transform: translate(-50%, -50%); */
 }
 
-.profile img {
+.gradient-circle {
+    z-index: -2;
+    width: 330px;
+    height: 330px;
+    background: linear-gradient(215deg, #9f9ab8, #605c75);
+    border-radius: 50%;
+    position: absolute;
+    left: calc(50% + 150px);
+    top: 45%;
+    left: 50%;
+    transform: translateY(-50%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.icon-wrapper {
+    position: absolute;
+    background: linear-gradient(180deg, #ffffff, #e6e3e3);
+    border-radius: 35%;
+}
+
+.icon-wrapper img {
+    width: 50%;
+    height: auto;
+    object-fit: cover;
+    display: block;
+    margin: auto;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+}
+
+.profile-img {
     max-width: 300px;
-    width: 100%; 
-    height: auto; 
-    margin-bottom: 20px; 
+    width: 100%;
+    height: auto;
+    /* margin-bottom: 20px;  */
+}
+
+.text-container {
+    position: relative;
+    display: inline-block;
+}
+
+.outlined-text,
+.no-outline-text {
+    font-size: 180px;
+    font-family: "dT Jakob Variable Concept Regular", sans-serif;
+    font-variation-settings: "wght" 40;
+    font-feature-settings: "calt" 0, "liga" 0;
+    color: purple;
+}
+
+.outlined-text {
+    -webkit-text-stroke: 4px white;
+    -webkit-text-fill-color: purple;
+    text-shadow: 2px 2px 0px white, -2px -2px 0px white, 2px -2px 0px white,
+        -2px 2px 0px white;
+}
+
+.no-outline-text {
+    position: absolute;
+    top: 0;
+    left: 0;
+    -webkit-text-stroke: 0;
 }
 
 .profile h1,
 .profile h2,
 .profile p {
-    margin: 10px;
+    margin: 0px;
+}
+
+.name {
+    font-size: 2em;
+    text-shadow: -4px -4px 0 #ffffff, 4px -4px 0 #ffffff, -4px 4px 0 #ffffff,
+        4px 4px 0 #ffffff;
+    color: #605c75;
+    -webkit-text-stroke: 4px #ffffff;
 }
 
 #experience {
     position: relative;
     padding: 20px;
     background-color: #9d96c23d;
+    /* z-index: -2; */
 }
 
 .project {
