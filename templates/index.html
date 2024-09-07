@@ -22,7 +22,10 @@
         </header>
         <section class="b">
             <div class="inner-grid">
-                <div class="ba"></div>
+                <div class="ba">
+                    <div class="circle"></div>
+                    <div class="corner"></div>
+                </div>
                 <div class="bb"></div>
                 <div class="bc">
                     <div class="bc-grid">
@@ -34,11 +37,16 @@
                 </div>
                 <div class="bd"></div>
                 <div class="be"><img src="{{ url_for('static', filename='img-asset/profile.png') }}" class="profile-pic"></div>
-                <div class="bf"><div class="bf-text">{{ title | safe }}</div></div>
+                <div class="bf">
+                    <div class="bf-text">{{ title | safe }}</div>
+                    <div class="bf-text outer">{{ title | safe }}</div>
+                </div>
                 <div class="bg-bh">
                     <div class="name-container">
-                        <p>{{ first_name }}</p>
-                        <p>{{ last_name }}</p>
+                        {{ first_name }} <br> {{ last_name }}
+                    </div>
+                    <div class="name-container outer">
+                        {{ first_name }} <br> {{ last_name }}
                     </div>
                 </div>
             </div>

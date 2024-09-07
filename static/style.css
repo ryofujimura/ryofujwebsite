@@ -17,7 +17,6 @@ body, html {
 }
 
 .a {
-    background-color: #f0a500; /* delete */
     display: flex;
     justify-content: center;
     align-items: flex-start;
@@ -29,7 +28,6 @@ body, html {
 }
 
 .b {
-    background-color: #ff6f61; /* delete */
     display: flex;
     align-items: stretch;
     width: 100%;
@@ -44,18 +42,35 @@ body, html {
 }
 
 .ba {
-    background-color: #5dade2; /* delete */
     position: relative;
-    clip-path: polygon(100% 0, 100% 100%, 0 100%);
+    background-color: red;
+    overflow: hidden;
+    aspect-ratio: 1 / 1;
+}
+
+.circle {
+    position: absolute;
+    z-index: 1;
+    width: 100%;
+    height: 100%;
+    background-color: red;
+    border-radius: 50%;
+}
+
+.corner {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 50%;
+    height: 50%;
+    background-color: white;
 }
 
 .bb {
-    background-color: #48c9b0; /* delete */
 }
 
 .bc {
     display: grid;
-    background-color: #ec7063; /* delete */
 }
 
 .bc-grid {
@@ -89,152 +104,139 @@ body, html {
 }
 
 .icon-one {
-    width: min(5vw, 80px); 
-    height: min(5vw, 80px);
+    width: clamp(40px, 4vw, 80px); 
+    height: clamp(40px, 4vw, 80px);
     transform: rotate(15deg);
 }
 
 .icon-two {
-    width: min(3vw, 50px); 
-    height: min(3vw, 50px);
+    width: clamp(25px, 3vw, 50px); 
+    height: clamp(25px, 3vw, 50px);
     transform: rotate(-5deg);
 }
 
 .icon-three {
-    width: min(2vw, 35px); 
-    height: min(2vw, 35px);
+    width: clamp(15px, 2vw, 35px); 
+    height: clamp(15px, 2vw, 35px);
     transform: rotate(5deg);
 }
 
 .bd {
-    background-color: #f4d03f; /* delete */
 }
 
 .be {
     position: relative;
-    background-color: #a569bd; /* delete */
     display: flex;
     align-items: center;
     justify-content: center;
 }
 
+.profile-pic {
+    z-index: 2;
+    position: absolute;
 
-@media (min-width: 768px){
-    .profile-pic {
-        z-index: 2;
-        position: absolute;
-        width: clamp(280px, 30vw, 500px);
-        height: clamp(280px, 30vw, 500px);
-        border-radius: 50%;
-    }
-
-    .bf {
-        background-color: #f5b041; /* delete */
-        display: flex;
-        align-items: center;
-        justify-content: flex-start;
-        padding-left: 2vw; 
-        position: relative;
-    }
-
-    .bf-text {
-        position: absolute;
-        left: -5vw; 
-        top: 30%;
-        transform: rotate(10deg);
-        z-index: 2;
-        line-height: 1.07;
-        font-weight: 600;
-        font-size: clamp(30px, 3vw, 50px);
-        color: #605c75;
-        color: transparent;
-        -webkit-text-stroke: 1px white;
-            
-    }
-
-    /* Adding bf-circle */
-    .bf::before {
-        content: '';
-        position: absolute;
-        left: -18vw; 
-        top: 60%;
-        transform: translateY(-50%);
-        width: clamp(280px, 30vw, 500px);
-        height: clamp(280px, 30vw, 500px);
-        background: linear-gradient(215deg, #9f9ab8, #605c75);
-        border-radius: 50%;
-    }
-
-    .bg-bh {
-        grid-column: span 2;
-        background-color: #58d68d; /* delete */
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        letter-spacing: 0.32em;
-        font-weight: 800;
-        font-size: 3em;
-    }
-
-    .bg-bh .text-container {
-        display: flex;
-        flex-direction: column;
-        align-items: flex-start; /* Align text to the left */
-    }
-
-    .c {
-        background-color: #2e86c1; /* delete */
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        width: 100%;
-    }
+    /* border-radius: 50%; */
+    width: clamp(30vw, 280px, 50vw);
+    height: clamp(30vw, 280px, 50vw);
 }
 
-@media (max-width: 768px){
-    .profile-pic {
-        z-index: 2;
-        position: absolute;
-        width: min(50vw, 280px); 
-        height: min(50vw, 280px);
-        /* border-radius: 50%; */
-    }
-
-    .bf {
-        background-color: #f5b041; /* delete */
-        display: flex;
-        align-items: center;
-        justify-content: flex-start;
-        padding-left: 2vw; 
-        position: relative;
-    }
-
-    .bf::before {
-        content: '';
-        position: absolute;
-        left: -18vw; 
-        top: 60%;
-        transform: translateY(-50%);
-        width: min(55vw, 280px); 
-        height: min(55vw, 280px);
-        background: linear-gradient(215deg, #9f9ab8, #605c75);
-        border-radius: 50%;
-    }
-
-    .bg-bh {
-        grid-column: span 2;
-        background-color: #58d68d; /* delete */
-        display: flex;
-        align-items: center;
-        justify-content: center;
-    }
-
-    .c {
-        background-color: #2e86c1; /* delete */
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        width: 100%;
-    }
+.bf{
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    padding-left: 2vw;
+    position: relative;
 }
 
+.bf::before {
+    content: '';
+    position: absolute;
+    left: -18vw;
+    top: 60%;
+    transform: translateY(-50%);
+    background: linear-gradient(215deg, #9f9ab8, #605c75);
+    border-radius: 50%;
+    width: clamp(30vw, 280px, 55vw);
+    height: clamp(30vw, 280px, 55vw);
+}
+
+.bf-text {
+    position: absolute;
+    transform: rotate(8deg);
+    z-index: 3;
+    left: -8vw;
+    line-height: 0.9;
+    font-weight: 600;
+    color: #605c75;
+    font-size: clamp(3vw, 30px, 5vw);
+}
+
+.bg-bh {
+    grid-column: span 2;
+    display: flex;
+    /* align-items: center; */
+    justify-content: center;
+    top: 0;
+    left: 0;
+}
+
+.name-container {
+    z-index: 3;
+    color: #605c75;
+    letter-spacing: 0.32em;
+    font-weight: 800;
+    font-size: 8vw;
+    line-height: 1.4;
+    padding: 0px 0px 0px 40px;
+}
+
+.outer {
+    z-index: 2;
+    position: absolute;
+    -webkit-text-stroke: 10px white;
+}
+
+.c {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+@media (min-width: 768px) {
+}
+
+@media (max-width: 768px) {
+}
+
+
+.a {
+    background-color: #f0a500; /* delete */
+}
+.b {
+    background-color: #ff6f61; /* delete */
+}
+.ba {
+    /* background-color: #5dade2; delete */
+}
+.bb {
+    background-color: #48c9b0; /* delete */
+}
+.bc {
+    background-color: #ec7063; /* delete */
+}
+.bd {
+    background-color: #f4d03f; /* delete */
+}
+.be {
+    background-color: #a569bd; /* delete */
+}
+.bf {
+    background-color: #f5b041;
+}
+.bg-bh {
+    background-color: #58d68d;
+}
+.c {
+    background-color: #2e86c1;
+}
