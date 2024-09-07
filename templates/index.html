@@ -15,105 +15,32 @@
         href="{{ url_for('static', filename='style.css') }}"
     />
 </head>
-
 <body>
-    <div class="background"></div>
-    <div class="background-grid background-grid-profile"></div>
-    <header>
-        <nav>
-            <a href="#content">
-                <img
-                    src="{{ url_for('static', filename='img-asset/rflogoblack.png') }}"
-                    alt="Home"
-                />
-            </a>
-            <!-- <a href="#experience">Experience</a> -->
-            <!-- <a href="#links">Links</a> -->
-        </nav>
-    </header>
-
-    <div id="content">
-        <div class="profile">
-            <div class="bottom-half-background"></div>
-            <img
-                src="{{ url_for('static', filename='img-asset/profile.png') }}"
-                alt="Profile Picture"
-                class="profile-img"
-            />
-            <div class="gradient-circle">
-                <div class="icon-wrapper icon-one">
-                    <img
-                        src="{{ url_for('static', filename='img-asset/python.png') }}"
-                        alt="Python Icon"
-                    />
+    <div class="container">
+        <header class="a">
+            <h1>Section A</h1>
+        </header>
+        <section class="b">
+            <div class="inner-grid">
+                <div class="ba"></div>
+                <div class="bb"></div>
+                <div class="bc">
+                    <div class="bc-grid">
+                        <div class="bca"></div>
+                        <div class="bcb"><img src="{{ url_for('static', filename='img-asset/python.png') }}" class="icon-bottom-left  icon-one"></div>
+                        <div class="bcc"><img src="{{ url_for('static', filename='img-asset/swift.png') }}" class="icon-top-left  icon-two"></div>
+                        <div class="bcd"><img src="{{ url_for('static', filename='img-asset/database.svg') }}" class="icon-bottom-left  icon-three"></div>
+                    </div>
                 </div>
-                <div class="icon-wrapper icon-two">
-                    <img
-                        src="{{ url_for('static', filename='img-asset/swift.png') }}"
-                        alt="Swift Icon"
-                    />
-                </div>
-                <div class="icon-wrapper icon-three">
-                    <img
-                        src="{{ url_for('static', filename='img-asset/database.svg') }}"
-                        alt="Database Icon"
-                    />
-                </div>
-                <div class="title-wrapper">
-                    <span class="title-outline">{{ title | safe }}</span>
-                    <span class="title-no-outline">{{ title | safe }}</span>
-                </div>
-            </div>
-
-            <div class="name-wrapper">
-                <span class="name-outline">{{ first_name }} {{ last_name }}</span>
-                <span class="name-no-outline">{{ first_name }} {{ last_name }}</span>
-            </div>
-
-            <div class="welcome-wrapper">
-                welcome to my portfolio
-            </div>
-        </div>
-
-        <section id="experience">
-            <div class="background-grid background-grid-experience"></div>
-            <h2>Experiences</h2>
-            <div id="experience-list">
-                {% for project in projects %}
-                <div class="project">
-                    <img
-                        src="{{ url_for('static', filename='img-asset/' + project['image']) }}"
-                        alt="{{ project['company'] }}"
-                    />
-                    <h3>{{ project['company'] }}</h3>
-                    <p>{{ project['term'] }}</p>
-                    <p><strong>{{ project['role'] | safe }}</strong></p>
-                    <p>{{ project['description'] | safe }}</p>
-                </div>
-                {% endfor %}
+                <div class="bd"></div>
+                <div class="be"><img src="{{ url_for('static', filename='img-asset/profile.png') }}" class="profile-pic"></div>
+                <div class="bf">Left Center Aligned Text</div>
+                <div class="bg-bh">Centered Text for BG and BH</div>
             </div>
         </section>
-
-        <section id="links">
-            <h2>Links</h2>
-            <ul>
-                {% for link in links %}
-                <li>
-                    <a href="{{ link['url'] }}">
-                        <img
-                            src="{{ url_for('static', filename='img-asset/' + link['icon']) }}"
-                            alt="{{ link['title'] }}"
-                        />
-                        {{ link['title'] }}
-                    </a>
-                </li>
-                {% endfor %}
-            </ul>
+        <section class="c">
+            <p>Text Centered in Section C</p>
         </section>
-
-        <div id="footer"></div>
-
-        <script src="{{ url_for('static', filename='script.js') }}"></script>
     </div>
 </body>
 </html>
