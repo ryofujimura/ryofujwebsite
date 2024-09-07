@@ -1,122 +1,119 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>Portfolio - Ryo Fujimura</title>
-        <!-- <link rel="preconnect" href="https://fonts.googleapis.com"> -->
-        <!-- <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin> -->
-        <link
-            href="https://fonts.googleapis.com/css2?family=MuseoModerno:ital,wght@0,100..900;1,100..900&display=swap"
-            rel="stylesheet"
-        />
-        <link
-            rel="stylesheet"
-            href="{{ url_for('static', filename='style.css') }}"
-        />
-    </head>
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Portfolio - Ryo Fujimura</title>
+    <!-- <link rel="preconnect" href="https://fonts.googleapis.com"> -->
+    <!-- <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin> -->
+    <link
+        href="https://fonts.googleapis.com/css2?family=MuseoModerno:ital,wght@0,100..900;1,100..900&display=swap"
+        rel="stylesheet"
+    />
+    <link
+        rel="stylesheet"
+        href="{{ url_for('static', filename='style.css') }}"
+    />
+</head>
 
-    <body>
-        <div class="background"></div>
-        <div class="background-grid background-grid-profile"></div>
-        <header>
-            <nav>
-                <a href="#content">
-                    <img
-                        src="{{ url_for('static', filename='img-asset/rflogoblack.png') }}"
-                        alt="Home"
-                    />
-                </a>
-                <!-- <a href="#experience">Experience</a> -->
-                <!-- <a href="#links">Links</a> -->
-            </nav>
-        </header>
-
-        <div id="content">
-            <div class="profile">
-                <div class="bottom-half-background"></div>
+<body>
+    <div class="background"></div>
+    <div class="background-grid background-grid-profile"></div>
+    <header>
+        <nav>
+            <a href="#content">
                 <img
-                    src="{{ url_for('static', filename='img-asset/profile.png') }}"
-                    alt="Profile Picture"
-                    class="profile-img"
+                    src="{{ url_for('static', filename='img-asset/rflogoblack.png') }}"
+                    alt="Home"
                 />
-                <div class="gradient-circle">
-                    <div
-                        class="icon-wrapper"
-                        style="left: 270px; top: -70px; width: 80px; height: 80px; transform: rotate(15deg);">
-                        <img
-                            src="{{ url_for('static', filename='img-asset/python.png') }}"
-                            alt="Profile Picture"
-                        />
-                    </div>
-                    <div class="icon-wrapper" 
-                         style="left: 160px; top: -35px; width: 70px; height: 70px; transform: rotate(-5deg);"">
-                        <img
-                            src="{{ url_for('static', filename='img-asset/swift.png') }}"
-                            alt="Profile Picture"
-                        />
-                    </div>
-                    <div class="icon-wrapper" 
-                         style="left: 300px; top: 80px; width: 50px; height: 50px; transform: rotate(5deg);"">
-                        <img
-                            src="{{ url_for('static', filename='img-asset/database.svg') }}"
-                            alt="Profile Picture"
-                        />
-                    </div>
-                    <div class="title-wrapper">
-                        <span class="title-outline">{{ title | safe }}</span>
-                        <span class="title-no-outline" >{{ title | safe }}</span>
-                    </div>
-                </div>
+            </a>
+            <!-- <a href="#experience">Experience</a> -->
+            <!-- <a href="#links">Links</a> -->
+        </nav>
+    </header>
 
-                <div class="name-wrapper">
-                    <span class="name-outline">{{ first_name }} {{ last_name }}</span>
-                    <span class="name-no-outline">{{ first_name }} {{ last_name }}</span>
+    <div id="content">
+        <div class="profile">
+            <div class="bottom-half-background"></div>
+            <img
+                src="{{ url_for('static', filename='img-asset/profile.png') }}"
+                alt="Profile Picture"
+                class="profile-img"
+            />
+            <div class="gradient-circle">
+                <div class="icon-wrapper icon-one">
+                    <img
+                        src="{{ url_for('static', filename='img-asset/python.png') }}"
+                        alt="Python Icon"
+                    />
                 </div>
-
-                <div class="welcome-wrapper">
-                    welcome to my portfolio
+                <div class="icon-wrapper icon-two">
+                    <img
+                        src="{{ url_for('static', filename='img-asset/swift.png') }}"
+                        alt="Swift Icon"
+                    />
+                </div>
+                <div class="icon-wrapper icon-three">
+                    <img
+                        src="{{ url_for('static', filename='img-asset/database.svg') }}"
+                        alt="Database Icon"
+                    />
+                </div>
+                <div class="title-wrapper">
+                    <span class="title-outline">{{ title | safe }}</span>
+                    <span class="title-no-outline">{{ title | safe }}</span>
                 </div>
             </div>
 
-            <section id="experience">
-                <div class="background-grid background-grid-experience"></div>
-                <h2 >Experiences</h2>
-                <div id="experience-list">
-                    {% for project in projects %}
-                    <div class="project">
-                        <img
-                            src="{{ url_for('static', filename='img-asset/' + project['image']) }}"
-                            alt="{{ project['company'] }}"
-                        />
-                        <h3>{{ project['company'] }}</h3>
-                        <p>{{ project['term'] }}</p>
-                        <p><strong>{{ project['role'] | safe }}</strong></p>
-                        <p>{{ project['description'] | safe }}</p>
-                    </div>
-                    {% endfor %}
-                </div>
-            </section>
+            <div class="name-wrapper">
+                <span class="name-outline">{{ first_name }} {{ last_name }}</span>
+                <span class="name-no-outline">{{ first_name }} {{ last_name }}</span>
+            </div>
 
-            <section id="links">
-                <h2>Links</h2>
-                <ul>
-                    {% for link in links %}
-                    <li>
-                        <a href="{{ link['url'] }}"
-                            ><img
-                                src="{{ url_for('static', filename='img-asset/' + link['icon']) }}"
-                                alt="{{ link['title'] }}"
-                            />{{ link['title'] }}</a
-                        >
-                    </li>
-                    {% endfor %}
-                </ul>
-            </section>
-
-            <div id="footer"></div>
-
-            <script src="{{ url_for('static', filename='script.js') }}"></script>
+            <div class="welcome-wrapper">
+                welcome to my portfolio
+            </div>
         </div>
-    </body>
+
+        <section id="experience">
+            <div class="background-grid background-grid-experience"></div>
+            <h2>Experiences</h2>
+            <div id="experience-list">
+                {% for project in projects %}
+                <div class="project">
+                    <img
+                        src="{{ url_for('static', filename='img-asset/' + project['image']) }}"
+                        alt="{{ project['company'] }}"
+                    />
+                    <h3>{{ project['company'] }}</h3>
+                    <p>{{ project['term'] }}</p>
+                    <p><strong>{{ project['role'] | safe }}</strong></p>
+                    <p>{{ project['description'] | safe }}</p>
+                </div>
+                {% endfor %}
+            </div>
+        </section>
+
+        <section id="links">
+            <h2>Links</h2>
+            <ul>
+                {% for link in links %}
+                <li>
+                    <a href="{{ link['url'] }}">
+                        <img
+                            src="{{ url_for('static', filename='img-asset/' + link['icon']) }}"
+                            alt="{{ link['title'] }}"
+                        />
+                        {{ link['title'] }}
+                    </a>
+                </li>
+                {% endfor %}
+            </ul>
+        </section>
+
+        <div id="footer"></div>
+
+        <script src="{{ url_for('static', filename='script.js') }}"></script>
+    </div>
+</body>
 </html>
