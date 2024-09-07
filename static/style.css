@@ -1,4 +1,6 @@
 body, html {
+    font-family: "MuseoModerno", Arial, sans-serif;
+    overflow-x: hidden;
     margin: 0;
     padding: 0;
     height: 100%;
@@ -116,48 +118,113 @@ body, html {
     justify-content: center;
 }
 
-.profile-pic {
-    z-index: 2;
-    position: absolute;
-    width: min(30vw, 500px); 
-    height: min(30vw, 500px);
-    border-radius: 50%;
+@media (min-width: 768px){
+    .profile-pic {
+        z-index: 2;
+        position: absolute;
+        width: clamp(280px, 30vw, 500px);
+        height: clamp(280px, 30vw, 500px);
+        border-radius: 50%;
+    }
+
+    .bf {
+        background-color: #f5b041;
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+        padding-left: 2vw; 
+        position: relative;
+    }
+
+    .bf-text {
+        position: absolute;
+        left: -5vw; 
+        top: 30%;
+        transform: rotate(10deg);
+        z-index: 2;
+        line-height: 1.07;
+        font-weight: 600;
+        font-size: clamp(30px, 3vw, 50px);
+        color: #605c75;
+        color: transparent;
+        -webkit-text-stroke: 1px white;
+            
+    }
+
+    /* Adding bf-circle */
+    .bf::before {
+        content: '';
+        position: absolute;
+        left: -15vw; 
+        top: 60%;
+        transform: translateY(-50%);
+        width: clamp(280px, 30vw, 500px);
+        height: clamp(280px, 30vw, 500px);
+        background: linear-gradient(215deg, #9f9ab8, #605c75);
+        border-radius: 50%;
+    }
+
+    .bg-bh {
+        grid-column: span 2;
+        background-color: #58d68d;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .c {
+        background-color: #2e86c1;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+    }
 }
 
-.bf {
-    background-color: #f5b041;
-    display: flex;
-    align-items: center;
-    justify-content: flex-start;
-    padding-left: 2vw; 
-    position: relative;
+@media (max-width: 768px){
+    .profile-pic {
+        z-index: 2;
+        position: absolute;
+        width: min(50vw, 280px); 
+        height: min(50vw, 280px);
+        /* border-radius: 50%; */
+    }
+
+    .bf {
+        background-color: #f5b041;
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+        padding-left: 2vw; 
+        position: relative;
+    }
+
+    .bf::before {
+        content: '';
+        position: absolute;
+        left: -18vw; 
+        top: 60%;
+        transform: translateY(-50%);
+        width: min(55vw, 280px); 
+        height: min(55vw, 280px);
+        background: linear-gradient(215deg, #9f9ab8, #605c75);
+        border-radius: 50%;
+    }
+
+    .bg-bh {
+        grid-column: span 2;
+        background-color: #58d68d;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .c {
+        background-color: #2e86c1;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+    }
 }
 
-/* Adding bf-circle */
-.bf::before {
-    content: '';
-    position: absolute;
-    left: -15vw; 
-    top: 50%;
-    transform: translateY(-50%);
-    width: min(30vw, 500px); 
-    height: min(30vw, 500px);
-    background-color: #2ecc71;
-    border-radius: 50%;
-}
-
-.bg-bh {
-    grid-column: span 2;
-    background-color: #58d68d;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-.c {
-    background-color: #2e86c1;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 100%;
-}

@@ -7,6 +7,7 @@ app = Flask(__name__)
 first_name = "RYO"
 last_name = "FUJIMURA"
 title = "SOFTWARE<br>ENGINEER"
+welcomemessage = "welcome to my portfolio"
 description = "I am a data scientist with experience in data management, analysis, and visualization. I am passionate about using data to drive business decisions and solve complex problems."
 featured_skills = ["swift", "database", "python"]
 
@@ -85,6 +86,7 @@ def index():
         first_name=first_name,
         last_name=last_name,
         title=title,
+        welcomemessage=welcomemessage,
         description=description,
         projects=projects,
         links=links,

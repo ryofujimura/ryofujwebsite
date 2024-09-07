@@ -28,18 +28,18 @@
                     <div class="bc-grid">
                         <div class="bca"></div>
                         <div class="bcb"><img src="{{ url_for('static', filename='img-asset/python.png') }}" class="icon-bottom-left  icon-one"></div>
-                        <div class="bcc"><img src="{{ url_for('static', filename='img-asset/swift.png') }}" class="icon-top-left  icon-two"></div>
+                        <div class="bcc"><img src="{{ url_for('static', filename='img-asset/Swift.png') }}" class="icon-top-left  icon-two"></div>
                         <div class="bcd"><img src="{{ url_for('static', filename='img-asset/database.svg') }}" class="icon-bottom-left  icon-three"></div>
                     </div>
                 </div>
                 <div class="bd"></div>
                 <div class="be"><img src="{{ url_for('static', filename='img-asset/profile.png') }}" class="profile-pic"></div>
-                <div class="bf">Left Center Aligned Text</div>
-                <div class="bg-bh">Centered Text for BG and BH</div>
+                <div class="bf"><div class="bf-text">{{ title | safe }}</div></div>
+                <div class="bg-bh">{{ first_name }} {{ last_name }}</div>
             </div>
         </section>
         <section class="c">
-            <p>Text Centered in Section C</p>
+            <p>{{ welcomemessage }}</p>
         </section>
     </div>
 </body>
