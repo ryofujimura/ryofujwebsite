@@ -35,7 +35,12 @@
                 <div class="bd"></div>
                 <div class="be"><img src="{{ url_for('static', filename='img-asset/profile.png') }}" class="profile-pic"></div>
                 <div class="bf"><div class="bf-text">{{ title | safe }}</div></div>
-                <div class="bg-bh">{{ first_name }} {{ last_name }}</div>
+                <div class="bg-bh">
+                    <div class="name-container">
+                        <p>{{ first_name }}</p>
+                        <p>{{ last_name }}</p>
+                    </div>
+                </div>
             </div>
         </section>
         <section class="c">

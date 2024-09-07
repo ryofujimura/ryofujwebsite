@@ -17,7 +17,7 @@ body, html {
 }
 
 .a {
-    background-color: #f0a500;
+    background-color: #f0a500; /* delete */
     display: flex;
     justify-content: center;
     align-items: flex-start;
@@ -29,7 +29,7 @@ body, html {
 }
 
 .b {
-    background-color: #ff6f61;
+    background-color: #ff6f61; /* delete */
     display: flex;
     align-items: stretch;
     width: 100%;
@@ -44,18 +44,18 @@ body, html {
 }
 
 .ba {
-    background-color: #5dade2;
+    background-color: #5dade2; /* delete */
     position: relative;
     clip-path: polygon(100% 0, 100% 100%, 0 100%);
 }
 
 .bb {
-    background-color: #48c9b0;
+    background-color: #48c9b0; /* delete */
 }
 
 .bc {
     display: grid;
-    background-color: #ec7063;
+    background-color: #ec7063; /* delete */
 }
 
 .bc-grid {
@@ -107,16 +107,17 @@ body, html {
 }
 
 .bd {
-    background-color: #f4d03f;
+    background-color: #f4d03f; /* delete */
 }
 
 .be {
     position: relative;
-    background-color: #a569bd;
+    background-color: #a569bd; /* delete */
     display: flex;
     align-items: center;
     justify-content: center;
 }
+
 
 @media (min-width: 768px){
     .profile-pic {
@@ -128,7 +129,7 @@ body, html {
     }
 
     .bf {
-        background-color: #f5b041;
+        background-color: #f5b041; /* delete */
         display: flex;
         align-items: center;
         justify-content: flex-start;
@@ -155,7 +156,7 @@ body, html {
     .bf::before {
         content: '';
         position: absolute;
-        left: -15vw; 
+        left: -18vw; 
         top: 60%;
         transform: translateY(-50%);
         width: clamp(280px, 30vw, 500px);
@@ -166,14 +167,23 @@ body, html {
 
     .bg-bh {
         grid-column: span 2;
-        background-color: #58d68d;
+        background-color: #58d68d; /* delete */
         display: flex;
         align-items: center;
         justify-content: center;
+        letter-spacing: 0.32em;
+        font-weight: 800;
+        font-size: 3em;
+    }
+
+    .bg-bh .text-container {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start; /* Align text to the left */
     }
 
     .c {
-        background-color: #2e86c1;
+        background-color: #2e86c1; /* delete */
         display: flex;
         justify-content: center;
         align-items: center;
@@ -191,7 +201,7 @@ body, html {
     }
 
     .bf {
-        background-color: #f5b041;
+        background-color: #f5b041; /* delete */
         display: flex;
         align-items: center;
         justify-content: flex-start;
@@ -213,14 +223,14 @@ body, html {
 
     .bg-bh {
         grid-column: span 2;
-        background-color: #58d68d;
+        background-color: #58d68d; /* delete */
         display: flex;
         align-items: center;
         justify-content: center;
     }
 
     .c {
-        background-color: #2e86c1;
+        background-color: #2e86c1; /* delete */
         display: flex;
         justify-content: center;
         align-items: center;
