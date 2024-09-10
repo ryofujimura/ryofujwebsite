@@ -1,23 +1,23 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}" />
-        <title>Experience Page</title>
-    </head>
-    <body>
-        <div class="section experience-list">
-            {% for project in projects %}
-            <div class="experience-block">
-                <img src="{{ url_for('static', filename='img-asset/' + project['image']) }}" alt="{{ project['company'] }}" />
-                <div>
-                    <h3>{{ project['role'] }}</h3>
-                    <p>{{ project['comapny'] }}</p>
-                    <p>{{ project['description'] }}</p>
-                </div>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Project Experience</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}" />
+</head>
+<body>
+    {% if project %}
+        <div class="experience-block">
+            <img src="{{ url_for('static', filename='img-asset/' + project['image']) }}" alt="{{ project['company'] }}" />
+            <div>
+                <h3>{{ project['role'] }}</h3>
+                <p>{{ project['comapny'] }}</p>
+                <p>{{ project['description'] }}</p>
             </div>
-            {% endfor %}
         </div>
-    </body>
+    {% else %}
+        <p>No project selected.</p>
+    {% endif %}
+</body>
 </html>

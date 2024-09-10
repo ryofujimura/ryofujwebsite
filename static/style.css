@@ -389,8 +389,10 @@ body, html {
 }
 
 .project-text {
-    /* display: grid;
-    grid-template-columns: 1fr 1fr; */
+    /* 
+    display: grid;
+    grid-template-columns: 1fr 1fr; 
+    */
     width: 100%;
     position: relative;
 }
@@ -437,6 +439,28 @@ body, html {
 
 .project-description{
 }
+
+.preview-container {
+    position: absolute; 
+    width: 300px; 
+    padding: 10px;
+    background-color: white; 
+    border: 1px solid #ddd;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    display: none; 
+    z-index: 10;
+    transition: opacity 0.2s ease;
+    text-align: center; 
+    border-radius: 8px;
+}
+
+
+
+
+.project-link:hover + .preview-container {
+    display: block;
+}
+
 
 #container-three{
     margin: 20vw 0 0 0;

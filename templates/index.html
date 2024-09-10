@@ -9,7 +9,7 @@
     <link href="https://fonts.googleapis.com/css2?family=MuseoModerno:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet" />
     <link href="https://fonts.googleapis.com/css2?family=Work+Sans:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}" />
-    
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
 </head>
 
 <body>
@@ -79,22 +79,24 @@
         </div>
 
         {% for project in projects %}
-            <div class="project">
-                <div class="project-icon">
-                    <img src="{{ url_for('static', filename='img-asset/' + project['image']) }}" alt="{{ project['company'] }}" />
-                </div>
-                <div class="project-text">
-                    <div class="project-term">{{ project['title'] }}</div>
-                    <div class="project-term outer">{{ project['title'] }}</div>
-                    <div class="project-board">
-                        <div class="project-role">{{ project['role'] | safe }}</div>
-                        <div class="project-company">{{ project['company'] }}</div>
+            <a href="{{ url_for('experience', project_id=project['id']) }}" class="project-link">
+                <div class="project">
+                    <div class="project-icon">
+                        <img src="{{ url_for('static', filename='img-asset/' + project['image']) }}" alt="{{ project['company'] }}" />
                     </div>
-                    <!-- <div class="project-term">{{ project['term'] }}</div> -->
-                    <!-- <div class="project-description">{{ project['description'] | safe }}</div> -->
+                    <div class="project-text">
+                        <div class="project-term">{{ project['title'] }}</div>
+                        <div class="project-term outer">{{ project['title'] }}</div>
+                        <div class="project-board">
+                            <div class="project-role">{{ project['role'] | safe }}</div>
+                            <div class="project-company">{{ project['company'] }}</div>
+                        </div>
+                    </div>
                 </div>
-            </div>
+            </a>
+            <div id="preview-{{ project['id'] }}" class="preview-container"></div>
         {% endfor %}
+
         <a href="{{ url_for('experience') }}">Experience</a>
 
     </div>
