@@ -81,7 +81,7 @@ projects = [
         "company": "Shohei Home Ground",
         "title": "Project",
         "term": "March 2023 - November 2023",
-        "image": "shohei.svg",
+        "image": "shoheihomeground.svg",
         "role": "Developer and Project Leader",
         "description": "Engineered and deployed a streamlined content scheduling and posting process using Python and the Instagram API, achieving 685 posts and increasing followers by 11,000 in 8 months. Transformed the project from a non-revenue-generating initiative to a profitable venture by enhancing engagement and expanding the audience.",
     },
