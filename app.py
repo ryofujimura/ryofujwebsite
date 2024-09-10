@@ -138,6 +138,13 @@ def index():
         links=links,
     )
 
+@app.route("/experience")
+def experience():
+    return render_template(
+        "experience.html",
+        projects=projects,
+    )
+
 
 if __name__ == '__main__':
     app.run(debug=True)

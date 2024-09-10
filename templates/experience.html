@@ -3,24 +3,18 @@
     <head>
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <link
-            rel="stylesheet"
-            href="{{ url_for('static', filename='css/style.css') }}"
-        />
+        <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}" />
         <title>Experience Page</title>
     </head>
     <body>
         <div class="section experience-list">
-            {% for exp in experiences %}
+            {% for project in projects %}
             <div class="experience-block">
-                <img
-                    src="{{ url_for('static', filename=exp.logo_path) }}"
-                    alt="Company Logo"
-                />
+                <img src="{{ url_for('static', filename='img-asset/' + project['image']) }}" alt="{{ project['company'] }}" />
                 <div>
-                    <h3>{{ exp.role }}</h3>
-                    <p>{{ exp.company }}</p>
-                    <p>{{ exp.description }}</p>
+                    <h3>{{ project['role'] }}</h3>
+                    <p>{{ project['comapny'] }}</p>
+                    <p>{{ project['description'] }}</p>
                 </div>
             </div>
             {% endfor %}
