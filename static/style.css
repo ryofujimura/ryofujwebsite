@@ -1,22 +1,78 @@
+/*
+.container {
+    background: linear-gradient(
+        to bottom,
+        rgba(255, 255, 255, 1) 0%,
+        rgba(255, 255, 255, 0) 100%
+    );
+    background-color: #c81515;
+}
+.a {
+    background-color: #f0a500; 
+}
+.b {
+    background-color: #eae8f4;
+}
+.ba {
+    background-color: #5dade2; 
+}
+.bb {
+    background-color: #48c9b0;
+}
+.bc {
+    background-color: #ec7063;
+}
+.bd {
+    background-color: #f4d03f;
+}
+.be {
+    background-color: #a569bd;
+}
+.bf {
+    background-color: #f5b041;
+}
+.bg-bh {
+    background-color: #58d68d;
+}
+.c {
+    background-color: #2e86c1;
+} */
+ 
 body, html {
     font-family: "MuseoModerno", Arial, sans-serif;
     overflow-x: hidden;
     margin: 0;
     padding: 0;
-    height: 100%;
     width: 100%;
     display: flex;
     flex-direction: column;
+    z-index: 3;
 }
 
-.container {
-    display: grid;
-    grid-template-rows: 1fr 2fr 1fr;
+
+.grid {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    z-index: 2; 
+    background-image: linear-gradient(to right, rgba(0,0,0,0.1) 1px, transparent 1px),
+                      linear-gradient(to bottom, rgba(0,0,0,0.1) 1px, transparent 1px);
+    background-size: 100px 100px; 
+}
+
+#container-one{
     height: 100vh;
     width: 100%;
+    background-color: #eae8f4;
+    display: grid;
+    z-index: 2;
+    grid-template-rows: 1fr 2fr 1fr;
+    overflow: hidden;
 }
-
+  
 .a {
+    background-color: white; 
     display: flex;
     justify-content: center;
     align-items: flex-start;
@@ -43,26 +99,27 @@ body, html {
 
 .ba {
     position: relative;
-    background-color: red;
+    background-color: #eae8f4;
     overflow: hidden;
-    aspect-ratio: 1 / 1;
+    /* aspect-ratio: 1 / 1; */
 }
 
 .circle {
     position: absolute;
     z-index: 1;
-    width: 100%;
-    height: 100%;
-    background-color: red;
-    border-radius: 50%;
+    width: 200%;
+    height: 200%;
+    background-color: #eae8f4;
+    border-radius: 100%;
 }
 
 .corner {
     position: absolute;
+    z-index: 0;
     top: 0;
     left: 0;
-    width: 50%;
-    height: 50%;
+    width: 100%;
+    height: 100%;
     background-color: white;
 }
 
@@ -74,7 +131,7 @@ body, html {
 }
 
 .bc-grid {
-    z-index: 2;
+    z-index: 3;
     display: grid;
     grid-template-columns: 1fr 1fr;
     grid-template-rows: 1fr 1fr;
@@ -132,12 +189,12 @@ body, html {
 }
 
 .profile-pic {
-    z-index: 2;
+    z-index: 3;
     position: absolute;
 
     /* border-radius: 50%; */
-    width: clamp(30vw, 280px, 50vw);
-    height: clamp(30vw, 280px, 50vw);
+    width: min(60vw, 450px);
+    height: min(60vw, 450px);
 }
 
 .bf{
@@ -156,15 +213,15 @@ body, html {
     transform: translateY(-50%);
     background: linear-gradient(215deg, #9f9ab8, #605c75);
     border-radius: 50%;
-    width: clamp(30vw, 280px, 55vw);
-    height: clamp(30vw, 280px, 55vw);
+    width: min(60vw, 450px);
+    height: min(60vw, 450px);
 }
 
 .bf-text {
     position: absolute;
     transform: rotate(8deg);
-    z-index: 3;
-    left: -8vw;
+    z-index: 4;
+    left: -5vw;
     line-height: 0.9;
     font-weight: 600;
     color: #605c75;
@@ -181,17 +238,17 @@ body, html {
 }
 
 .name-container {
-    z-index: 3;
+    z-index: 4;
     color: #605c75;
-    letter-spacing: 0.32em;
+    letter-spacing: 0.1em;
     font-weight: 800;
     font-size: 8vw;
-    line-height: 1.4;
+    line-height: 1.1;
     padding: 0px 0px 0px 40px;
 }
 
 .outer {
-    z-index: 2;
+    z-index: 3;
     position: absolute;
     -webkit-text-stroke: 10px white;
 }
@@ -203,40 +260,18 @@ body, html {
     width: 100%;
 }
 
+.c p {
+    background: linear-gradient(140deg, #9D96C2, #605C75);
+    background-clip: text; 
+    color: transparent; 
+    font-size: 6vw;
+    font-weight: 800;
+    letter-spacing: 0.6vw;
+}
+
 @media (min-width: 768px) {
 }
 
 @media (max-width: 768px) {
 }
 
-
-.a {
-    background-color: #f0a500; /* delete */
-}
-.b {
-    background-color: #ff6f61; /* delete */
-}
-.ba {
-    /* background-color: #5dade2; delete */
-}
-.bb {
-    background-color: #48c9b0; /* delete */
-}
-.bc {
-    background-color: #ec7063; /* delete */
-}
-.bd {
-    background-color: #f4d03f; /* delete */
-}
-.be {
-    background-color: #a569bd; /* delete */
-}
-.bf {
-    background-color: #f5b041;
-}
-.bg-bh {
-    background-color: #58d68d;
-}
-.c {
-    background-color: #2e86c1;
-}
