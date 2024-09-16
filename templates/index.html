@@ -10,6 +10,14 @@
     <link href="https://fonts.googleapis.com/css2?family=Work+Sans:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}" />
     <script src="{{ url_for('static', filename='script.js') }}"></script>
+    <script>
+        let projects = [];
+        fetch('/project_data')
+            .then(response => response.json())
+            .then(data => {
+                projects = data;
+            });
+    </script> 
 </head>
 
 <body>
@@ -94,11 +102,8 @@
                     </div>
                 </div>
             </a>
-            <div id="preview-{{ project['id'] }}" class="preview-container"></div>
+            <a href="{{ url_for('experience', project_id=project['id']) }}" id="preview-{{ project['id'] }}" class="preview-container"></a>
         {% endfor %}
-
-        <a href="{{ url_for('experience') }}">Experience</a>
-
     </div>
 
     <section id="container-three">
@@ -110,8 +115,8 @@
             </div>
             <div class="block-c">
                 <div class="bubble-left">
-                    <div class="left-text">LET'S WORK TOGETHER!</div>
-                    <div class="left-text outer">LET'S WORK TOGETHER!</div>
+                    <div class="left-text">FIND</div>
+                    <div class="left-text outer">FIND</div>
                 </div>
                 <!-- <div class="bubble-rigt">PROJECT</div>
                 <div class="bubble-rigt outer">PROJECT</div> -->

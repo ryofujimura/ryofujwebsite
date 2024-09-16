@@ -1,28 +1,37 @@
-// Function to show the preview in the center horizontally at the height of the hovered link
+function isTouchDevice() {
+    return 'ontouchstart' in window || navigator.maxTouchPoints > 0 || navigator.msMaxTouchPoints > 0;
+}
+
 function showPreview(event, projectId) {
     const previewContainer = document.getElementById('preview-' + projectId);
     previewContainer.style.display = 'block';
 
-    // Calculate the center position for the preview container horizontally
     const windowWidth = window.innerWidth;
     const previewWidth = previewContainer.offsetWidth;
     const centerX = (windowWidth - previewWidth) / 2;
 
-    // Position the preview container at the same height as the hovered link
     const rect = event.target.getBoundingClientRect();
-    const linkTop = rect.top + window.scrollY; // Vertical position of the hovered link
+    const linkTop = rect.top + window.scrollY;
 
-    // Set the position of the preview container
     previewContainer.style.top = `${linkTop}px`;
     previewContainer.style.left = `${centerX + window.scrollX}px`;
 
-    // Load preview content dynamically if needed
-    previewContainer.innerHTML = `
-        <h3>Project Title: ${projectId}</h3>
-        <p>Some sneak peek content for the project...</p>
-    `; // Replace this with actual content or make an AJAX call to fetch content dynamically
+    const projectData = projects.find(p => p.id === projectId);
 
-    // Add mouseover and mouseout event listeners to the preview to keep it visible
+    if (projectData) {
+        const companyName = projectData.company;
+        const description = projectData.description;
+
+        // Truncate the description to 50 characters
+        const truncatedDescription = truncateText(description, 80);
+
+        previewContainer.innerHTML = `
+            <div class="company-name" style="font-weight: bold; font-size: 2.5vw;">${companyName}</div>
+            <div class="project-description">${truncatedDescription}</div>
+        `;
+
+    }
+
     previewContainer.addEventListener('mouseover', () => {
         previewContainer.style.display = 'block';
     });
@@ -32,7 +41,6 @@ function showPreview(event, projectId) {
     });
 }
 
-// Function to hide the preview when the mouse moves away from the link or preview
 function hidePreview(event) {
     const previewContainers = document.querySelectorAll('.preview-container');
     previewContainers.forEach(container => {
@@ -40,13 +48,19 @@ function hidePreview(event) {
     });
 }
 
-// Attach event listeners for hover to each project link
-document.addEventListener('DOMContentLoaded', function() {
-    const projectLinks = document.querySelectorAll('.project-link');
+// Function to truncate the text to a specific character limit
+function truncateText(text, maxLength) {
+    return text.length > maxLength ? text.substring(0, maxLength) + '...' : text;
+}
 
-    projectLinks.forEach(link => {
-        const projectId = link.getAttribute('href').split('project_id=')[1]; // Extract project ID from URL
-        link.addEventListener('mouseover', (event) => showPreview(event, projectId));
-        link.addEventListener('mouseout', hidePreview);
-    });
+document.addEventListener('DOMContentLoaded', function () {
+    if (!isTouchDevice()) {
+        const projectLinks = document.querySelectorAll('.project-link');
+
+        projectLinks.forEach(link => {
+            const projectId = link.getAttribute('href').split('project_id=')[1];
+            link.addEventListener('mouseover', (event) => showPreview(event, projectId));
+            link.addEventListener('mouseout', hidePreview);
+        });
+    }
 });

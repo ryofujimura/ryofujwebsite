@@ -1,4 +1,4 @@
-from flask import Flask, render_template, request
+from flask import Flask, render_template, request, jsonify
 import os
 
 app = Flask(__name__)
@@ -19,7 +19,7 @@ projects = [
         "title": "Work",
         "term": "June 2024 - August 2024",
         "image": "honda.svg",
-        "role": "Software Engineer - Intern",
+        "role": "Software Engineer",
         "description": "Conducted comprehensive research on on-device generative AI, focusing on its potential applications within the automotive industry to enhance vehicle functionalities. Developed and demonstrated applications on an NVIDIA Jetson Orin Nano 8GB using Linux and CUDA, showcasing on-device generative AI capabilities with Meta's Llama 3 model to enhance vehicle autonomy and local AI performance.",
     },
     {
@@ -28,7 +28,7 @@ projects = [
         "title": "Work",
         "term": "October 2021 - May 2024",
         "image": "cusco.svg",
-        "role": "Data Engineer - Freelance",
+        "role": "Data Engineer",
         "description": "Led a three-member team in developing a Python application that extracted data from 11,560 archived PDF files, utilizing advanced software development methodologies. Demonstrated proficiency in testing and development, including the creation of comprehensive test cases to ensure software quality and functionality. Enhanced user access to historical data dating back to 1977, resulting in a 30% increase in revenue by enabling precise retrieval of previously inaccessible information for new users.",
     },
     {
@@ -37,7 +37,7 @@ projects = [
         "title": "Work",
         "term": "October 2021 - May 2024",
         "image": "cusco.svg",
-        "role": "Full Stack Web Developer - Freelance",
+        "role": "Full Stack Web Developer",
         "description": "Collaborated with a team of 2 to develop a modern website utilizing Svelte with Svelte Kit, focusing on UI and information accessibility, resulting in a 50% reduction in exit rate. Implemented data management systems including Google Drive, Cloudinary, and Sanity for efficient content organization and delivery, leading to a 250% increase in revenue over the past three years.",
     },
     {
@@ -46,7 +46,7 @@ projects = [
         "title": "Work",
         "term": "September 2023 - November 2023",
         "image": "fujitsubo.svg",
-        "role": "Data Engineer - Freelance",
+        "role": "Data Engineer",
         "description": "Engineered a Python-based software program employing web scraping techniques to meticulously extract crucial data from diverse websites. Automated generation workflows with Adobe InDesign, significantly boosting efficiency and achieving a 100% error-free rate by eliminating manual effort across various cases, ensuring software quality and functionality.",
     },
     {
@@ -55,7 +55,7 @@ projects = [
         "title": "Project",
         "term": "March 2024 - April 2024",
         "image": "matchatime.svg",
-        "role": "Co-Project Manager and Developer",
+        "role": "Co-PM and Developer",
         "description": "Developed and created application functions with Swift/SwiftUI, implemented multi-city synchronization, designed and tested features, fixed bugs, and deployed solutions. Planned and completed the project in 4 weeks, launched the application on the Mac App Store, and managed cross-functional team collaboration to ensure seamless integration and project success.",
     },
     {
@@ -94,6 +94,15 @@ projects = [
         "role": "Trainer",
         "description": "Provided training sessions to professionals on Amazon Web Services, imparting knowledge on cloud infrastructure and services.",
     },
+    {
+        "id": "10",
+        "company": "IEEE Transactions on Network and Service Management",
+        "title": "Publication",
+        "term": "September 2024",
+        "image": "resume.png",
+        "role": "6G Network and Data Management with Blockchain",
+        "description": "Provided training sessions to professionals on Amazon Web Services, imparting knowledge on cloud infrastructure and services.",
+    },
     # more projects...
 ]
 
@@ -116,15 +125,7 @@ links = [
     },
 ]
 
-
-# Get available images with their extensions
-img_asset_path = os.path.join(app.static_folder, "img-asset")
-# for each file in the img_asset_path, add "img-asset/" in front
-
-
-
-# print(available_images)
-# Define routes
+# Route for the main page
 @app.route("/")
 def index():
     return render_template(
@@ -138,14 +139,17 @@ def index():
         links=links,
     )
 
+# API endpoint to fetch project data
+@app.route('/project_data')
+def project_data():
+    return jsonify(projects)
+
+# Route for the experience page
 @app.route('/experience')
 def experience():
     project_id = request.args.get('project_id')
-    # Find the project by ID
     selected_project = next((p for p in projects if str(p['id']) == project_id), None)
     return render_template('experience.html', project=selected_project)
-
-
 
 if __name__ == '__main__':
     app.run(debug=True)

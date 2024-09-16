@@ -283,6 +283,16 @@ body, html {
    margin: 20vw 0 0 0;
 }
 
+#container-two a {
+    color: inherit; 
+    text-decoration: none; 
+    cursor: pointer; 
+}
+
+#container-two a:hover {
+    color: inherit; 
+}
+
 .block-title{
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
@@ -368,7 +378,7 @@ body, html {
     align-items: center;
     background-color: white;
     padding: 2vw;
-    margin: 5vw 7vw;
+    margin: 6vw 6vw;
     border-radius: 4vw;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     overflow: visible;
@@ -412,7 +422,6 @@ body, html {
 
 .project-board {    
     font-family: "Work Sans", Arial, sans-serif;
-
     display: grid;
     grid-template-rows: auto 1fr; 
     align-items: start; 
@@ -436,7 +445,6 @@ body, html {
     align-self: end;
 }
 
-
 .project-description{
 }
 
@@ -444,7 +452,7 @@ body, html {
     position: absolute; 
     width: 300px; 
     padding: 10px;
-    background-color: white; 
+    background-color: rgba(255, 255, 255, 0.7);
     border: 1px solid #ddd;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     display: none; 
@@ -452,15 +460,13 @@ body, html {
     transition: opacity 0.2s ease;
     text-align: center; 
     border-radius: 8px;
+    backdrop-filter: blur(5px); 
 }
-
-
 
 
 .project-link:hover + .preview-container {
     display: block;
 }
-
 
 #container-three{
     margin: 20vw 0 0 0;
