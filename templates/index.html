@@ -1,57 +1,6 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <title>Ryo Fujimura Portfolio</title>
-    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }} ">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Trispace:wght@100..800&display=swap" rel="stylesheet">
+{% extends 'base.html' %}
 
-</head>
-<body>
-    <div class="container" >
-        <header>
-            <a href="{{ url_for('home') }}">
-                <img src="{{ url_for('static', filename='img-asset/rflogoblack.png') }}" alt="Logo">
-            </a>
-        </header>    
-        <img src="{{ url_for('static', filename='img-asset/big-image.png') }}" alt="Profile Image" class="profile-image">
-        <div class="profile">
-            <div class="role role1 gradient-text">
-                <p>Data Engineer</p>
-            </div>
-            <div class="role role2 gradient-text">
-                <p>Ryo Fujimura</p>
-            </div>
-            
-            <div class="hyperlink-container">
-                <!-- Repeat for hyperlink -->
-                {% for hyperlink in hyperlink %}
-                <a href="{{ hyperlink.url }}" class="hyperlink">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" class="hyperlink-image {{ hyperlink.title }}-icon">
-                        <path d="{{ hyperlink.icon }}"/>
-                    </svg>
-                    {{ hyperlink.title }}
-                </a>
-                {% endfor %}   
-            </div>
-        </div>
-        <div class="projects-container">
-            <!-- Repeat for other projects -->
-            {% for project in projects %}
-            <a href="/projects/{{ project.id }}" class="project">
-                <div class="project-icon-title">
-                    <span class="project-title">{{ project.title }}</span>
-                    <img src="{{ url_for('static', filename='img-asset/'+project.image) }}" alt="Project Icon" class="project-icon">
-                </div>
-                <div class="project-role">
-                    <p>
-                        {{ project.role|safe }}
-                    </p>
-                </div>
-            </a>
-            {% endfor %}
-        </div> 
-    </div>
-</body>
-</html>
+{% block content %}
+<h2>Welcome to Our Photo Prints Store!</h2>
+<p>Discover beautiful photo prints to enhance your space.</p>
+{% endblock %}

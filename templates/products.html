@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h2>Our Products</h2>
+<div class="product-list">
+    {% for product in products %}
+    <div class="product-item">
+        <h3><a href="{{ url_for('product_detail', product_id=product['id']) }}">{{ product['name'] }}</a></h3>
+        <!-- Display the first image of the product -->
+        <a href="{{ url_for('product_detail', product_id=product['id']) }}">
+            <img src="{{ url_for('combined_image', image_filename=product['images'][0], background_id=1) | url_encode }}" alt="{{ product['name'] }}">
+        </a>
+        <p>{{ product['description'] }}</p>
+    </div>
+    {% endfor %}
+</div>
+{% endblock %}
